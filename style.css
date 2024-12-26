@@ -1,0 +1,101 @@
+body {
+    background-color: #f8f9fa; /* Light background color */
+    font-family: 'Arial', sans-serif; /* Font style */
+    color: #333; /* Text color */
+}body {
+    background-color: #f8f9fa; /* Light background color */
+    font-family: 'Arial', sans-serif; /* Font style */
+    color: #333; /* Text color */
+}.navbar {
+    background-color: #007bff; /* Primary color for navbar */
+    padding: 15px; /* Padding for navbar */
+}
+.navbar-brand {
+    color: #fff; /* Logo text color */
+}
+.nav-link {
+    color: #fff; /* Link color */
+}
+.nav-link:hover {
+    color: #ffc107; /* Hover color for links */
+}.navbar {
+    background-color: #007bff; /* Primary color for navbar */
+    padding: 15px; /* Padding for navbar */
+}
+.navbar-brand {
+    color: #fff; /* Logo text color */
+}
+.nav-link {
+    color: #fff; /* Link color */
+}
+.nav-link:hover {
+    color: #ffc107; /* Hover color for links */
+}.s_banner {
+    background-size: cover; /* Cover the entire section */
+    color: #fff; /* Text color for banner */
+    text-align: center; /* Center text */
+}.s_banner {
+    background-size: cover; /* Cover the entire section */
+    color: #fff; /* Text color for banner */
+    text-align: center; /* Center text */
+}.btn-primary {
+    background-color: #28a745; /* Green background */
+    border: none; /* No border */
+}
+.btn-primary:hover {
+    background-color: #218838; /* Darker green on hover */
+}.btn-primary {
+    background-color: #28a745; /* Green background */
+    border: none; /* No border */
+}
+.btn-primary:hover {
+    background-color: #218838; /* Darker green on hover */
+}.card {
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.card-title {
+    font-weight: bold; /* Bold title */
+}.card {
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.card-title {
+    font-weight: bold; /* Bold title */
+}footer {
+    background-color: #343a40; /* Dark background for footer */
+    color: #fff; /* White text color */
+    padding: 20px 0; /* Padding for footer */
+}
+footer a {
+    color: #ffc107; /* Link color in footer */
+}footer {
+    background-color: #343a40; /* Dark background for footer */
+    color: #fff; /* White text color */
+    padding: 20px 0; /* Padding for footer */
+}
+footer a {
+    color: #ffc107; /* Link color in footer */
+}.program-card {
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.program-card:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background on hover */
+    color: white; /* Change text color to white */
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items on small screens */
+    }
+    .s_banner {
+        min-height: 400px; /* Adjust banner height for mobile */
+    }
+}@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items on small screens */
+    }
+    .s_banner {
+        min-height: 400px; /* Adjust banner height for mobile */
+    }
+}
