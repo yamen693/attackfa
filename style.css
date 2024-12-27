@@ -1,3 +1,6 @@
+.hidden {
+    display: none;
+}
 body {
     background-color: #f8f9fa; /* Light background color */
     font-family: 'Arial', sans-serif; /* Font style */
@@ -30,7 +33,14 @@ body {
 }
 .nav-link:hover {
     color: #ffc107; /* Hover color for links */
-}.s_banner {
+}
+#language-menu {
+    border: 1px solid #ccc;
+    background-color: white;
+    position: absolute; /* Ensure it appears below the button */
+    z-index: 1000; /* Make sure it appears above other elements */
+}
+.s_banner {
     background-size: cover; /* Cover the entire section */
     color: #fff; /* Text color for banner */
     text-align: center; /* Center text */
@@ -84,6 +94,13 @@ footer a {
     background-color: rgba(0, 0, 0, 0.8); /* Dark background on hover */
     color: white; /* Change text color to white */
 }
+.text-responsive {
+    font-size: 1.5rem; /* Default size for mobile */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column; /* Stack navbar items on small screens */
@@ -97,5 +114,58 @@ footer a {
     }
     .s_banner {
         min-height: 400px; /* Adjust banner height for mobile */
+    }
+}@media (max-width: 640px) {
+  .text-2xl {
+    font-size: 1.5rem; /* Adjust size for mobile if necessary */
+  }
+}
+/* Adjust font size for larger screens */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .text-responsive {
+        font-size: 2rem; /* Increase size for tablets */
+    }
+}
+
+/* Adjust font size for larger screens */
+@media (min-width: 1025px) {
+    .text-responsive {
+        font-size: 2.5rem; /* Increase size for laptops */
+    }
+}
+/* Adjust font size for tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .text-responsive {
+        font-size: 2rem; /* Increase size for tablets */
+        text-align: center; /* Center the text */
+    }
+}
+
+/* Adjust font size for larger screens */
+@media (min-width: 1025px) {
+    .text-responsive {
+        font-size: 2.5rem; /* Increase size for laptops */
+    }
+}
+/* Adjust font size for smaller mobile devices (300px to 639px) */
+@media (min-width: 300px) and (max-width: 639px) {
+    .text-responsive {
+        font-size: 1.2rem; /* Smaller size for very small screens */
+        text-align: center; /* Center the text */
+    }
+}
+
+/* Adjust font size for tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .text-responsive {
+        font-size: 2rem; /* Increase size for tablets */
+        text-align: center; /* Center the text */
+    }
+}
+
+/* Adjust font size for larger screens */
+@media (min-width: 1025px) {
+    .text-responsive {
+        font-size: 2.5rem; /* Increase size for laptops */
     }
 }
