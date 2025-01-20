@@ -220,3 +220,17 @@ footer a {
         font-size: 2.5rem; /* Increase size for laptops */
     }
 }
+@media (max-width: 299px) {
+    body {
+        padding-top: 40px; /* Adjust padding for smaller screens */
+    }
+    .navbar {
+        padding: 10px; /* Reduce padding for navbar */
+    }
+    .s_banner {
+        min-height: 200px; /* Adjust banner height for very small screens */
+    }
+    .text-responsive {
+        font-size: 1rem; /* Smaller font size for very small screens */
+    }
+}

@@ -1,283 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Attack Football Academy
-  </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
-  <link href="./attack (1).png" rel="icon" type=""/>
-  <style>
-   @keyframes magicIn {
-    0% {
-      opacity: 0;
-      transform: scale(0.5) translateY(-50px);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-  }
-  .magic-in {
-    animation: magicIn 0.5s ease-in-out forwards;
-
-  }
-  </style>
- </head>
- <body class="bg-off-white">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Attack Football Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="./attack (1).png" rel="icon" type="image/png"/>
+    <style>
+        @keyframes magicIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        .magic-in {
+            animation: magicIn 0.5s ease-in-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-off-white">
     <!-- Loading Page -->
-  <div id="loading" class="loading-screen hidden">
-    <img src="./attack (1).png" alt="Attack Academy Logo" class="loading-logo" />
-  </div>
-
-  <!-- Intro Page -->
-  <div id="intro" class="intro-screen hidden">
-    <img src="./attack (1).png" alt="Attack Academy Logo" class="intro-logo" />
-  </div>
-  <header class="fixed top-0 left-0 w-full z-10">
-    <div class="flex items-center justify-between p-4 bg-transparent transition-all duration-300 ease-in-out">
-      <div class="flex items-center">
-        <img alt="Attack Academy Logo" class="h-12 w-12 mr-2 transition-transform duration-300 hover:scale-110" height="48" src="./attack (1).png" width="48"/>
-        <h1 class="text-responsive font-bold text-white">
-          Attack Football Academy
-        </h1>
-      </div>
-      <nav class="flex items-center ml-auto transition-all duration-300 ease-in-out">
-        <!-- Navigation links go here -->
-        <div class="md:flex md:space-x-4 hidden" id="desktop-menu">
-          <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0">
-           <li class="mr-4">
-            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">
-             About Us
-            </a>
-           </li>
-           <li class="mr-4">
-            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">
-             Vision
-            </a>
-           </li>
-           <li class="mr-4">
-            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#mission">
-             Mission
-            </a>
-           </li>
-           <li class="mr-4">
-            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#programs">
-             Our Programs
-            </a>
-           </li>
-           <li class="mr-4">
-            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">
-             Contact
-            </a>
-           </li>
-          </ul>
-         </div>
-         <div class="relative mr-4">
-          <button class="bg-transparent text-white nav-link flex items-center transition-colors duration-300 ease-in-out hover:text-yellow-500" id="language-button">
-              <span>EN</span>
-              <i class="fas fa-chevron-down ml-2"></i>
-          </button>
-          <ul class="absolute right-0 mt-2 w-32 bg-white text-black rounded-lg shadow-lg hidden" id="language-menu">
-              <li class="px-4 py-2 hover:bg-gray-200" data-lang="en">
-                  <a href="#" class="language-option">EN</a>
-              </li>
-              <li class="px-4 py-2 hover:bg-gray-200" data-lang="ar">
-                  <a href="#" class="language-option">AR</a>
-              </li>
-          </ul>
-      </div>
-         <div class="md:hidden">
-          <button class="text-white focus:outline-none" id="mobile-menu-button">
-           <i class="fas fa-bars">
-           </i>
-          </button>
-         </div>
-      </nav>
+    <div class="loading-screen hidden" id="loading">
+        <img alt="Attack Academy Logo" class="loading-logo" height="48" src="./attack (1).png" width="48"/>
     </div>
-  </header>
-
-  <section class="relative">
-       <img alt="Football field with players practicing" class="w-full h-96 object-cover" height="400" src="./WhatsApp Image 2024-11-04 at 10.19.44 PM.jpeg">
-
- 
-  </section>
-  <section class="py-12 bg-white fade-in" id="about">
-   <div class="container mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-4 gradient-text">
-     About Us
-    </h2>
-    <p class="text-black leading-relaxed">
-     Attack Football Academy works to provide positive basics to players with high-quality techniques in an environment conducive to this. All training periods are specifically designed to work on the players’ personalities and develop their personal and physical skills.
-                The academy works in training units in the physical, technical, psychological and tactical aspects.
-                Participation of the two distinguished players in EFA League, Cairo region.
-    </p>
-   </div>
-  </section>
-  <section class="py-12 bg-white transition-all duration-300 ease-in-out" id="vision">
-   <div class="container mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">
-     Vision
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-     <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-      <img alt="Vision image showing a football field with a clear sky" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/wftbQNCrfplSK0buzB8eyOj7p7AiHVBppokw05iJFg6oyp9nA.jpg" width="384"/>
-      <p class="text-black mb-4 transition-text-white">
-       Our vision is to be the leading football academy that nurtures young talents and prepares them for professional careers in football.
-      </p>
-     </div>
-     <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-      <img alt="Vision image showing a group of young football players in action" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/pA7LkdmExwLIP5afxR96QvrzYZouEWwJTunciZBQ0CQrcafTA.jpg" width="384"/>
-      <p class="text-black mb-4 transition-text-white">
-       We aim to create a positive and inclusive environment where players can develop their skills, character, and love for the game.
-      </p>
-     </div>
+    <!-- Intro Page -->
+    <div class="intro-screen hidden" id="intro">
+        <img alt="Attack Academy Logo" class="intro-logo" height="48" src="./attack (1).png" width="48"/>
     </div>
-   </div>
-  </section>
-  <section class="py-12 bg-white transition-all duration-300 ease-in-out" id="mission">
-   <div class="container mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">
-     Mission
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-     <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-      <img alt="Mission image showing a coach instructing young players" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/0kenU9JEeisct0W7Q4ZXKAgOw9jfneehceBPALAuonSfpcafTA.jpg" width="384"/>
-      <p class="text-black mb-4 transition-text-white">
-       Our mission is to provide high-quality training programs that focus on the physical, technical, psychological, and tactical development of our players.
-      </p>
-     </div>
-     <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-      <img alt="Mission image showing young players celebrating a goal" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/els0X6XfIHkLd0xemJDwmY7Cqw5HJk9p2RSeDIqCMf9IKn2fE.jpg" width="384"/>
-      <p class="text-black mb-4 transition-text-white">
-       We strive to instill values of teamwork, discipline, and sportsmanship in our players, preparing them for success both on and off the field.
-      </p>
-     </div>
+    <!-- News Ticker -->
+    <div class="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-white py-2 text-center">
+        <marquee behavior="scroll" direction="left">
+            Welcome to Attack Football Academy! Registration for the new season is now open. Join us to develop your skills and love for the game!
+        </marquee>
     </div>
-   </div>
-  </section>
-  <section class="py-12 bg-white transition-all duration-300 ease-in-out" id="programs">
-    <div class="container mx-auto px-4"> <!-- Added padding on the sides -->
-       <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">
-          Our Programs
-       </h2>
-       <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> <!-- Grid layout for boxes -->
-          <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-             <h3 class="card-title">Beginner Program</h3>
-             <p>Perfect for young players just starting out. Focuses on basic skills and fun.</p>
-             <p class="price">$100/month</p>
-          </div>
- 
-          <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-             <h3 class="card-title">Intermediate Program</h3>
-             <p>For players who have some experience and want to improve their skills.</p>
-             <p class="price">$150/month</p>
-          </div>
- 
-          <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-             <h3 class="card-title">Advanced Program</h3>
-             <p>Designed for experienced players looking to take their game to the next level.</p>
-             <p class="price">$200/month</p>
-          </div>
-       </div>
-    </div>
- </section>
-  <section class="py-12 bg-gradient-to-r from-black to-[rgb(232,181,70)] transition-all duration-300 ease-in-out" id="maggie-section">
-   <div class="container mx-auto flex flex-col md:flex-row items-center md:items-start">
-    <img alt="Portrait of a woman with blonde hair and a green shirt" class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-8 hover:scale-105 transition-transform duration-300 ease-in-out" height="200" src="https://storage.googleapis.com/a1aa/image/JhCNl1d0vGK1M9doFoeeIARPaKqYY9xLEHexuXW5aytTXp9nA.jpg" width="200"/>
-    <div class="text-center md:text-left">
-     <h1 class="text-3xl font-bold mb-4 text-white">
-      <br/>
-      a Skilled Administrative
-      <br/>
-      Support Professional
-     </h1>
-     <p class="text-white mb-6">
-      I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.
-     </p>
-    </div>
-   </div>
-  </section>
-  <footer class="bg-[rgb(232,181,70)] text-black py-4 transition-all duration-300 ease-in-out">
-   <div class="container mx-auto text-center transition-text">
-    <p class="transition-text hover:text-white">
-     © 2024 Attack Academy. All rights reserved.
-    </p>
-    <div class="flex justify-center space-x-4 mt-4">
-     <a class="text-black hover:text-white transition-colors duration-300 ease-in-out" href="https://www.facebook.com" target="_blank">
-      <i class="fab fa-facebook-f">
-      </i>
-     </a>
-     <a class="text-black hover:text-white transition-colors duration-300 ease-in-out" href="https://www.twitter.com" target="_blank">
-      <i class="fab fa-twitter">
-      </i>
-     </a>
-     <a class="text-black hover:text-white transition-colors duration-300 ease-in-out" href="https://www.instagram.com" target="_blank">
-      <i class="fab fa-instagram">
-      </i>
-     </a>
-     <a class="text-black hover:text-white transition-colors duration-300 ease-in-out" href="https://www.linkedin.com" target="_blank">
-      <i class="fab fa-linkedin-in">
-      </i>
-     </a>
-     <a class="text-black hover:text-white transition-colors duration-300 ease-in-out" href="https://www.google.com/maps" target="_blank">
-      <i class="fas fa-map-marker-alt">
-      </i>
-     </a>
-    </div>
-   </div>
-  </footer>
-  <script>
-   document.addEventListener('DOMContentLoaded', function() {
-    const languageButton = document.getElementById('language-button');
-    const languageMenu = document.getElementById('language-menu');
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-10 bg-transparent shadow-md">
+        <div class="flex items-center justify-between p-4 transition-all duration-300 ease-in-out">
+            <div class="flex items-center">
+                <img alt="Attack Academy Logo" class="h-12 w-12 mr-2 transition-transform duration-300 hover:scale-110" height="48" src="./attack (1).png" width="48"/>
+                <h1 class="text-responsive font-bold text-white">Attack Football Academy</h1>
+            </div>
+            <nav class="flex items-center ml-auto transition-all duration-300 ease-in-out">
+                <div class="md:flex md:space-x-4 hidden" id="desktop-menu">
+                    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0">
+                        <li class="mr-4">
+                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">About Us</a>
+                        </li>
+                        <li class="mr-4">
+                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">Vision</a>
+                        </li>
+                        <li class="mr-4">
+                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#mission">Mission</a>
+                        </li>
+                        <li class="mr-4">
+                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#programs">Our Programs</a>
+                        </li>
+                        <li class="mr-4">
+                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative mr-4">
+                    <button class="bg-transparent text-black nav-link flex items-center transition-colors duration-300 ease-in-out hover:text-yellow-500" id="language-button">
+                        <span>EN</span>
+                        <i class="fas fa-chevron-down ml-2"></i>
+                    </button>
+                    <ul class="absolute right-0 mt-2 w-32 bg-white text-black rounded-lg shadow-lg hidden" id="language-menu">
+                        <li class="px-4 py-2 hover:bg-gray-200" data-lang="en">
+                            <a class="language-option" href="#">EN</a>
+                        </li>
+                        <li class="px-4 py-2 hover:bg-gray-200" data-lang="ar">
+                            <a class="language-option" href="#">AR</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-black focus:outline-none" id="mobile-menu-button">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <div class="md:hidden bg-white shadow-md hidden" id="mobile-menu">
+            <ul class="flex flex-col space-y-2 p-4">
+                <li>
+                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">About Us</a>
+                </li>
+                <li>
+                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">Vision</a>
+                </li>
+                <li>
+                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#mission">Mission</a>
+                </li>
+                <li>
+                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#programs">Our Programs</a>
+                </li>
+                <li>
+                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <section class="relative">
+        <img alt="Football field with players practicing" class="w-full h-96 object-cover" height="400" src="./WhatsApp Image 2024-11-04 at 10.19.44 PM.jpeg" width="1200"/>
+    </section>
+    <section class="py-12 bg-white fade-in" id="about">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4 gradient-text">About Us</h2>
+            <p class="text-black leading-relaxed">
+              Attack Football Academy works to provide positive basics to players with high-quality techniques in an environment conducive to this. All training periods are specifically designed to work on the players’ personalities and develop their personal and physical skills.
+              The academy works in training units in the physical, technical, psychological and tactical aspects.
+              Participation of the two distinguished players in EFA League, Cairo region.
+            </p>
+        </div>
+    </section>
+    <section class="py-12 bg-white transition-all duration-300 ease-in-out" id="vision">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">Vision</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <img alt="Vision image showing a football field with a clear sky" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/cx6dLhtJNkKrNZUahnoYH1UOA5AxQ7wdZJWxqpS5fM4PIiDKA.jpg" width="384"/>
+                    <p class="text-black mb-4 transition-text-white">
+                        Our vision is to be the leading football academy that nurtures young talents and prepares them for professional careers in football.
+                    </p>
+                </div>
+                <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <img alt="Vision image showing a group of young football players in action" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/KlPF4A9FnJqSN1ko7NK3fObBc41YJjDrwacfLzB2uF5WQEHUA.jpg" width="384"/>
+                    <p class="text-black mb-4 transition-text-white">
+                        We aim to create a positive and inclusive environment where players can develop their skills, character, and love for the game.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-12 bg-white transition-all duration-300 ease-in-out" id="mission">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">Mission</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <img alt="Mission image showing a coach instructing young players" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/kcZPeEBMsoTRPCuu8qoivURqeEgCRHfeCrZNgKs97W6hBRcQB.jpg" width="384"/>
+                    <p class="text-black mb-4 transition-text-white">
+                        Our mission is to provide high-quality training programs that focus on the physical, technical, psychological, and tactical development of our players.
+                    </p>
+                </div>
+                <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <img alt="Mission image showing young players celebrating a goal" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/AekKmkRWmVz6Qil8ALbgfEXBAqzJUj4646ssey2dfUsdBRcQB.jpg" width="384"/>
+                    <p class="text-black mb-4 transition-text-white">
+                        We strive to instill values of teamwork, discipline, and sportsmanship in our players, preparing them for success both on and off the field.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-12 bg-white transition-all duration-300 ease-in-out" id="programs">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">Our Programs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <img alt="Young football players practicing basic skills" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/1k2dLhtJNkKrNZUahnoYH1UOA5AxQ7wdZJWxqpS5fM4PIiDKA.jpg" width="384"/>
+                    <h3 class="card-title">Beginner Program</h3>
+                    <p>Perfect for young players just starting out. Focuses on basic skills and fun.</p>
+                    <p class="price">$100/month</p>
+                </div>
+                <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <img alt="Intermediate football players improving their skills" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/2k2dLhtJNkKrNZUahnoYH1UOA5AxQ7wdZJWxqpS5fM4PIiDKA.jpg" width="384"/>
+                    <h3 class="card-title">Intermediate Program</h3>
+                    <p>For players who have some experience and want to improve their skills.</p>
+                    <p class="price">$150/month</p>
+                </div>
+                <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <img alt="Advanced football players in action" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/3k2dLhtJNkKrNZUahnoYH1UOA5AxQ7wdZJWxqpS5fM4PIiDKA.jpg" width="384"/>
+                    <h3 class="card-title">Advanced Program</h3>
+                    <p>Designed for experienced players looking to take their game to the next level.</p>
+                    <p class="price">$200/month</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-12 bg-gradient-to-r from-black to-[rgb(232,181,70)] transition-all duration-300 ease-in-out" id="maggie-section">
+        <div class="container mx-auto flex flex-col md:flex-row items-center md:items-start">
+            <img alt="Portrait of a woman with blonde hair and a green shirt" class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-8 hover:scale-105 transition-transform duration-300 ease-in-out" height="200" src="https://storage.googleapis.com/a1aa/image/31fe5dsc5jlKXUG43NEDnexjfYXdh9TzckKBtycPjbV2BRcQB.jpg" width="200"/>
+            <div class="text-center md:text-left">
+                <h1 class="text-3xl font-bold mb-4 text-white">
+                    <br/>
+                    a Skilled Administrative
+                    <br/>
+                    Support Professional
+                </h1>
+                <p class="text-white mb-6">
+                    I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-[rgb(232,181,70)] text-black py-4 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto text-center transition-text">
+            <p class="transition-text hover:text-white">© 2024 Attack Academy. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a class="text-black hover:text-white transition-colors duration-300 ease-in-out" href="https://www.facebook.com" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="text-black hover:text-white transition-colors duration-300 ease-in-out" href="https://www.twitter.com" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a class="text-black hover:text-white transition-colors duration-300 ease-in-out" href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="text-black hover:text-white transition-colors duration-300 ease-in-out" href="https://www.linkedin.com" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a class="text-black hover:text-white transition-colors duration-300 ease-in-out" href="https://www.google.com/maps" target="_blank">
+                    <i class="fas fa-map-marker-alt"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageButton = document.getElementById('language-button');
+            const languageMenu = document.getElementById('language-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-    languageButton.addEventListener('click', function() {
-      languageMenu.classList.toggle('hidden');
-    });
+            languageButton.addEventListener('click', function() {
+                languageMenu.classList.toggle('hidden');
+            });
 
-    document.addEventListener('click', function(event) {
-      if (!languageButton.contains(event.target) && !languageMenu.contains(event.target)) {
-        languageMenu.classList.add('hidden');
-      }
-    });
+            document.addEventListener('click', function(event) {
+                if (!languageButton.contains(event.target) && !languageMenu.contains(event.target)) {
+                    languageMenu.classList.add('hidden');
+                }
+            });
 
-    mobileMenuButton.addEventListener('click', function() {
-      mobileMenu.classList.toggle('hidden');
-      if (!mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.add('magic-in');
-      } else {
-        mobileMenu.classList.remove('magic-in');
-      }
-    });
-  });
-  document.addEventListener('DOMContentLoaded', function() {
-    const loadingScreen = document.getElementById('loading');
-    const introScreen = document.getElementById('intro');
-
-    // Hide loading screen immediately
-    loadingScreen.classList.add('hidden'); // Hide loading screen
-
-    // Show intro screen
-    introScreen.classList.remove('hidden'); // Show intro screen
-
-    // Hide intro screen after 3 seconds
-    setTimeout(() => {
-      introScreen.style.opacity = '0'; // Fade out intro screen
-      setTimeout(() => {
-        introScreen.style.display = 'none'; // Remove from view
-      }, 1000); // Wait for fade out to complete
-    }, 3000); // Show intro for 3 seconds
-  });
-
-  </script>
-  <script src="./index.js"></script>
- </body>
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+          const loadingScreen = document.getElementById('loading');
+          const introScreen = document.getElementById('intro');
+      
+          // Hide loading screen immediately
+          loadingScreen.classList.add('hidden'); // Hide loading screen
+      
+          // Show intro screen
+          introScreen.classList.remove('hidden'); // Show intro screen
+      
+          // Hide intro screen after 3 seconds
+          setTimeout(() => {
+            introScreen.style.opacity = '0'; // Fade out intro screen
+            setTimeout(() => {
+              introScreen.style.display = 'none'; // Remove from view
+            }, 1000); // Wait for fade out to complete
+          }, 3000); // Show intro for 3 seconds
+        });
+      
+    </script>
+</body>
 </html>
