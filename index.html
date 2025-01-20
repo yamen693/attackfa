@@ -22,23 +22,37 @@
         .magic-in {
             animation: magicIn 0.5s ease-in-out forwards;
         }
+        .intro-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+            transition: opacity 2s ease-in-out;
+        }
+        .intro-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="bg-off-white">
-    <!-- Loading Page -->
-    <div class="loading-screen hidden" id="loading">
-        <img alt="Attack Academy Logo" class="loading-logo" height="48" src="./attack (1).png" width="48"/>
-    </div>
     <!-- Intro Page -->
-    <div class="intro-screen hidden" id="intro">
+    <div class="intro-screen" id="intro">
         <img alt="Attack Academy Logo" class="intro-logo" height="48" src="./attack (1).png" width="48"/>
     </div>
     <!-- News Ticker -->
-    <div class="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-white py-2 text-center">
+    <div class="bg-gradient-to-r from-black via-yellow-400 to-black text-white py-2 text-center">
         <marquee behavior="scroll" direction="left">
-            Welcome to Attack Football Academy! Registration for the new season is now open. Join us to develop your skills and love for the game!
+         Welcome to Attack Football Academy! Registration for the new season is now open. Join us to develop your skills and love for the game!
         </marquee>
-    </div>
+       </div>
     <!-- Header -->
     <header class="fixed top-0 left-0 w-full z-10 bg-transparent shadow-md">
         <div class="flex items-center justify-between p-4 transition-all duration-300 ease-in-out">
@@ -125,13 +139,13 @@
             <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">Vision</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Vision image showing a football field with a clear sky" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/cx6dLhtJNkKrNZUahnoYH1UOA5AxQ7wdZJWxqpS5fM4PIiDKA.jpg" width="384"/>
+                    <img alt="Vision image showing a football field with a clear sky" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/no3WaNQVEYZ3J5YKCpdZpqJmzWLt34xGzcyEetmegSVRZHHUA.jpg" width="384"/>
                     <p class="text-black mb-4 transition-text-white">
                         Our vision is to be the leading football academy that nurtures young talents and prepares them for professional careers in football.
                     </p>
                 </div>
                 <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Vision image showing a group of young football players in action" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/KlPF4A9FnJqSN1ko7NK3fObBc41YJjDrwacfLzB2uF5WQEHUA.jpg" width="384"/>
+                    <img alt="Vision image showing a group of young football players in action" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/etuLKDfNBAkBK0vapoQ17gXWdwlt7kwIo35Ojiz02SCDZHHUA.jpg" width="384"/>
                     <p class="text-black mb-4 transition-text-white">
                         We aim to create a positive and inclusive environment where players can develop their skills, character, and love for the game.
                     </p>
@@ -144,13 +158,13 @@
             <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">Mission</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Mission image showing a coach instructing young players" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/kcZPeEBMsoTRPCuu8qoivURqeEgCRHfeCrZNgKs97W6hBRcQB.jpg" width="384"/>
+                    <img alt="Mission image showing a coach instructing young players" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/LsWzMNaWzEKlC9ZDbQeYkmod0fdHbGNkkp2fgyvknQuVyOOoA.jpg" width="384"/>
                     <p class="text-black mb-4 transition-text-white">
                         Our mission is to provide high-quality training programs that focus on the physical, technical, psychological, and tactical development of our players.
                     </p>
                 </div>
                 <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Mission image showing young players celebrating a goal" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/AekKmkRWmVz6Qil8ALbgfEXBAqzJUj4646ssey2dfUsdBRcQB.jpg" width="384"/>
+                    <img alt="Mission image showing young players celebrating a goal" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/4BkHeniIeffeXhW2bEdetMs4xs6rGK2dfYbMCzUXi2QgisjDKA.jpg" width="384"/>
                     <p class="text-black mb-4 transition-text-white">
                         We strive to instill values of teamwork, discipline, and sportsmanship in our players, preparing them for success both on and off the field.
                     </p>
@@ -163,19 +177,19 @@
             <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">Our Programs</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Young football players practicing basic skills" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/1k2dLhtJNkKrNZUahnoYH1UOA5AxQ7wdZJWxqpS5fM4PIiDKA.jpg" width="384"/>
+                    <img alt="Young football players practicing basic skills" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/IM2BoHb5LsLlHVfkjskMrkak5wwkcreX4zewTkLtWgPNyOOoA.jpg" width="384"/>
                     <h3 class="card-title">Beginner Program</h3>
                     <p>Perfect for young players just starting out. Focuses on basic skills and fun.</p>
                     <p class="price">$100/month</p>
                 </div>
                 <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Intermediate football players improving their skills" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/2k2dLhtJNkKrNZUahnoYH1UOA5AxQ7wdZJWxqpS5fM4PIiDKA.jpg" width="384"/>
+                    <img alt="Intermediate football players improving their skills" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/FaWyz9d7rWobNZDZcCnNztbd2DFtTbAjq8cQfDagarmlsjDKA.jpg" width="384"/>
                     <h3 class="card-title">Intermediate Program</h3>
                     <p>For players who have some experience and want to improve their skills.</p>
                     <p class="price">$150/month</p>
                 </div>
                 <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Advanced football players in action" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/3k2dLhtJNkKrNZUahnoYH1UOA5AxQ7wdZJWxqpS5fM4PIiDKA.jpg" width="384"/>
+                    <img alt="Advanced football players in action" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/WG60gyBtMG7ZPhC6TSedKxmt26aQBoUgS451kDr5GKWksjDKA.jpg" width="384"/>
                     <h3 class="card-title">Advanced Program</h3>
                     <p>Designed for experienced players looking to take their game to the next level.</p>
                     <p class="price">$200/month</p>
@@ -185,7 +199,7 @@
     </section>
     <section class="py-12 bg-gradient-to-r from-black to-[rgb(232,181,70)] transition-all duration-300 ease-in-out" id="maggie-section">
         <div class="container mx-auto flex flex-col md:flex-row items-center md:items-start">
-            <img alt="Portrait of a woman with blonde hair and a green shirt" class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-8 hover:scale-105 transition-transform duration-300 ease-in-out" height="200" src="https://storage.googleapis.com/a1aa/image/31fe5dsc5jlKXUG43NEDnexjfYXdh9TzckKBtycPjbV2BRcQB.jpg" width="200"/>
+            <img alt="Portrait of a woman with blonde hair and a green shirt" class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-8 hover:scale-105 transition-transform duration-300 ease-in-out" height="200" src="https://storage.googleapis.com/a1aa/image/9zEG77v58M5XN11gtSRKmucyYsxyjM7QHFEEsGW3GXCU2xBF.jpg" width="200"/>
             <div class="text-center md:text-left">
                 <h1 class="text-3xl font-bold mb-4 text-white">
                     <br/>
@@ -243,24 +257,10 @@
             });
         });
         document.addEventListener('DOMContentLoaded', function() {
-          const loadingScreen = document.getElementById('loading');
-          const introScreen = document.getElementById('intro');
-      
-          // Hide loading screen immediately
-          loadingScreen.classList.add('hidden'); // Hide loading screen
-      
-          // Show intro screen
-          introScreen.classList.remove('hidden'); // Show intro screen
-      
-          // Hide intro screen after 3 seconds
-          setTimeout(() => {
-            introScreen.style.opacity = '0'; // Fade out intro screen
-            setTimeout(() => {
-              introScreen.style.display = 'none'; // Remove from view
-            }, 1000); // Wait for fade out to complete
-          }, 3000); // Show intro for 3 seconds
+            setTimeout(function() {
+                document.getElementById('intro').classList.add('hidden');
+            }, 3000);
         });
-      
     </script>
 </body>
 </html>
