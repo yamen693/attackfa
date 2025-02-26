@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Attack Football Academy - Reels</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="./attack (1).png" rel="icon" type="image/png"/>
+
+    <style>
+        @keyframes magicIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        .magic-in {
+            animation: magicIn 0.5s ease-in-out forwards;
+        }
+        .intro-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+            transition: opacity 2s ease-in-out;
+        }
+        .intro-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+          
+  /* Intro Screen Styles */
+  .intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998; /* Below loading screen */
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .intro-logo {
+    width: 150px; /* Adjust size as needed */
+  }
+  .bg-custom-yellow {
+    background-color: rgb(232, 181, 70);
+}
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: black;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(232, 181, 70);
+    border-radius: 6px;
+    border: 3px solid black;
+}
+    </style>
+</head>
+<body class="bg-off-white">
+    <header class="fixed top-0 left-0 w-full z-10 bg-transparent shadow-md">
+        <div class="flex items-center justify-between p-4 transition-all duration-300 ease-in-out">
+            <div class="flex items-center">
+                <img alt="Attack Academy Logo" class="h-12 w-12 mr-2 transition-transform duration-300 hover:scale-110" height="48" src="./attack (1).png" width="48"/>
+                <h1 class="text-responsive font-bold text-white">Attack Football Academy</h1>
+            </div>
+            <nav class="flex items-center ml-auto transition-all duration-300 ease-in-out">
+                <div class="md:flex md:space-x-4 hidden" id="desktop-menu">
+                    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0">
+                        <li class="mr-4">
+                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#about">About Us</a>
+                        </li>
+                        <li class="mr-4">
+                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#vision">Vision</a>
+                        </li>
+                        <li class="mr-4">
+                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#mission">Mission</a>
+                        </li>
+                        <li class="mr-4">
+                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#programs">Our Programs</a>
+                        </li>
+                        <li class="mr-4">
+                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">reels</a>
+                        </li>
+                        <li class="mr-4">
+                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative mr-4">
+                    <button class="bg-transparent text-black nav-link flex items-center transition-colors duration-300 ease-in-out hover:text-yellow-500" id="language-button">
+                        <span>EN</span>
+                        <i class="fas fa-chevron-down ml-2"></i>
+                    </button>
+                    <ul class="absolute right-0 mt-2 w-32 bg-white text-black rounded-lg shadow-lg hidden" id="language-menu">
+                        <li class="px-4 py-2 hover:bg-gray-200" data-lang="en" href="./index.html" >
+                            <a class="language-option" href="./index.html">EN</a>
+                        </li>
+                     
+                        <li class="px-4 py-2 hover:bg-gray-200" data-lang="ar"  href="./index .html">
+                            <a class="language-option" href="./index .html">AR</a>
+                        </li>
+                       
+                           
+                        
+                    </ul>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-black focus:outline-none" id="mobile-menu-button">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <div class="md:hidden bg-white shadow-md hidden" id="mobile-menu">
+            <ul class="flex flex-col space-y-2 p-4">
+                <li>
+                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">About Us</a>
+                </li>
+                <li>
+                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">Vision</a>
+                </li>
+                <li>
+                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#mission">Mission</a>
+                </li>
+                <li>
+                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#programs">Our Programs</a>
+                </li>
+                <li>
+                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="py-12 bg-white fade-in" id="reels">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4 gradient-text">Reels</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <video class="w-full h-48 object-cover rounded-lg mb-4" controls>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3 class="card-title">Reel 1</h3>
+                    <p>Highlights from our latest match.</p>
+                </div>
+                <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <video class="w-full h-48 object-cover rounded-lg mb-4" controls>
+                        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3 class="card-title">Reel 2</h3>
+                    <p>Training session highlights.</p>
+                </div>
+                <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <video class="w-full h-48 object-cover rounded-lg mb-4" controls>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3 class="card-title">Reel 3</h3>
+                    <p>Player interviews and behind the scenes.</p>
+                </div>
+                <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <video class="w-full h-48 object-cover rounded-lg mb-4" controls>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3 class="card-title">Reel 4</h3>
+                    <p>Best goals of the season.</p>
+                </div>
+                <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <video class="w-full h-48 object-cover rounded-lg mb-4" controls>
+                        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3 class="card-title">Reel 5</h3>
+                    <p>Behind the scenes of our training camp.</p>
+                </div>
+                <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <video class="w-full h-48 object-cover rounded-lg mb-4" controls>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3 class="card-title">Reel 6</h3>
+                    <p>Interviews with our coaches.</p>
+                </div>
+                <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <video class="w-full h-48 object-cover rounded-lg mb-4" controls>
+                        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3 class="card-title">Reel 7</h3>
+                    <p>Highlights from our community events.</p>
+                </div>
+                <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <video class="w-full h-48 object-cover rounded-lg mb-4" controls>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3 class="card-title">Reel 8</h3>
+                    <p>Special moments from our academy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-[rgb(232,181,70)] text-black py-4 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto text-center transition-text">
+            <p class="transition-text hover:text-white">© 2024 Attack Academy. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a class="text-black hover:text-white transition-colors duration-300 ease-in-out" href="https://www.facebook.com/share/15kEBiVWmL/" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="text-black hover:text-white transition-colors duration-300 ease-in-out" href="https://www.instagram.com/attack_fa_?igsh=MWlsajQ0dmZiMnd2OQ==" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="text-black hover:text-white transition-colors duration-300 ease-in-out" href="https://www.tiktok.com/@attack.football.a" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageButton = document.getElementById('language-button');
+            const languageMenu = document.getElementById('language-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            languageButton.addEventListener('click', function() {
+                languageMenu.classList.toggle('hidden');
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!languageButton.contains(event.target) && !languageMenu.contains(event.target)) {
+                    languageMenu.classList.add('hidden');
+                }
+            });
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
