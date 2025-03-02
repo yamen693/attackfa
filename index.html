@@ -12,6 +12,11 @@
    
   
     <style>
+        marquee{
+            font: xx-large;
+            width: 100%;
+
+        }
         @keyframes magicIn {
             0% {
                 opacity: 0;
@@ -77,6 +82,7 @@
     border-radius: 6px;
     border: 3px solid black;
 }
+
     </style>
 </head>
 <body class="bg-off-white">
@@ -85,43 +91,44 @@
         <img alt="Attack Academy Logo" class="intro-logo" height="48" src="./attack (1).png" width="48"/>
     </div>
     <!-- News Ticker -->
-    <div class="bg-gradient-to-r from-black via-[rgb(232,181,70)] to-[rgb(232,181,70)]text-white py-2 text-center">
-        <marquee behavior="scroll" direction="left">
-         Welcome to Attack Football Academy! Registration for the new season is now open. Join us to develop your skills and love for the game!
+    <div class="bg-gradient-to-r from-[rgb(60,57,57)] via-[rgb(232,181,70)] to-[rgb(rgb(60,57,57))]text-white py-2 text-center">
+        <marquee behavior="scroll" direction="left" >
+        <h1> Ramdan offer <span style="color: rgb(255, 0, 0);"> 70%</span> OF</h1>
+        
         </marquee>
        </div>
     <!-- Header -->
     <header class="fixed top-0 left-0 w-full z-10 bg-transparent shadow-md">
         <div class="flex items-center justify-between p-4 transition-all duration-300 ease-in-out">
             <div class="flex items-center">
-                <img alt="Attack Academy Logo" class="h-12 w-12 mr-2 transition-transform duration-300 hover:scale-110" height="48" src="./attack (1).png" width="48"/>
-                <h1 class="text-responsive font-bold text-white">Attack Football Academy</h1>
+                <img alt="Attack Academy Logo" class="h-20 w-20 transition-transform duration-300 hover:scale-110" height="80" src="./attack (1).png" style="align-items: center;" width="80"/>
+                <h1 class="text-3xl font-bold text-white ml-4">Attack Academy</h1>
             </div>
             <nav class="flex items-center ml-auto transition-all duration-300 ease-in-out">
                 <div class="md:flex md:space-x-4 hidden" id="desktop-menu">
                     <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0">
                         <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">About Us</a>
+                            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">About Us</a>
                         </li>
                         <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">Vision</a>
+                            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">Vision</a>
                         </li>
                         <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#mission">Mission</a>
+                            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#mission">Mission</a>
                         </li>
                         <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#programs">Our Programs</a>
+                            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#programs">Our Programs</a>
                         </li>
                         <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">Reels</a>
+                            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">Reels</a>
                         </li>
                         <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
+                            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
                         </li>
                     </ul>
                 </div>
                 <div class="relative mr-4">
-                    <button class="bg-transparent text-black nav-link flex items-center transition-colors duration-300 ease-in-out hover:text-yellow-500" id="language-button">
+                    <button class="bg-transparent text-white nav-link flex items-center transition-colors duration-300 ease-in-out hover:text-yellow-500" id="language-button">
                         <span>EN</span>
                         <i class="fas fa-chevron-down ml-2"></i>
                     </button>
@@ -139,7 +146,7 @@
                     </ul>
                 </div>
                 <div class="md:hidden">
-                    <button class="text-black focus:outline-none" id="mobile-menu-button">
+                    <button class="text-white focus:outline-none" id="mobile-menu-button">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -168,9 +175,10 @@
             </ul>
         </div>
     </header>
+   
     <section class="relative">
-        <img alt="Football field with players practicing" class="w-full h-96 object-cover" height="400" src="./WhatsApp Image 2024-11-04 at 10.19.44 PM.jpeg" width="1200"/>
-    </section>
+        <img alt="Football field with players practicing" class="w-full h-[600px] object-cover" height="600" src="./new cover.jpeg" width="100%"/>
+       </section>
     <section class="py-12 bg-white fade-in" id="about">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-4 gradient-text">About Us</h2>
@@ -232,21 +240,25 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img alt="Young football players practicing basic skills" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/IM2BoHb5LsLlHVfkjskMrkak5wwkcreX4zewTkLtWgPNyOOoA.jpg" width="384"/>
-                    <h3 class="card-title">Beginner Program</h3>
-                    <p>Perfect for young players just starting out. Focuses on basic skills and fun.</p>
-                    <p class="price">$100/month</p>
+                    <h3 class="card-title" style="text-bold">
+                        Training programs for technical skills</h3>
+                        <br>
+                    <p>These programs focus on enhancing basic skills such as passing, dribbling, shooting, and ball control. This is done through organized training sessions that include various exercises that simulate the real situations that players face during matches.</p>
+                    <!-- <p class="price">$100/month</p> -->
                 </div>
                 <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img alt="Intermediate football players improving their skills" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/FaWyz9d7rWobNZDZcCnNztbd2DFtTbAjq8cQfDagarmlsjDKA.jpg" width="384"/>
-                    <h3 class="card-title">Intermediate Program</h3>
-                    <p>For players who have some experience and want to improve their skills.</p>
-                    <p class="price">$150/month</p>
+                    <h3 class="card-title"> Programs dedicated to physical development</h3>
+                    <br>
+                    <p>Training is not limited to technical skills only, but also includes preparing players physically to withstand pressure and physical effort during matches. This includes fitness training, muscle strength, balance and flexibility.</p>
+                   
                 </div>
                 <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img alt="Advanced football players in action" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/WG60gyBtMG7ZPhC6TSedKxmt26aQBoUgS451kDr5GKWksjDKA.jpg" width="384"/>
-                    <h3 class="card-title">Advanced Program</h3>
-                    <p>Designed for experienced players looking to take their game to the next level.</p>
-                    <p class="price">$200/month</p>
+                    <h3 class="card-title">The mental and psychological aspect</h3>
+                    <br>
+                    <p>The training programs also aim to enhance the mental and psychological capabilities of players, through guidance sessions that help them deal with psychological pressure, increase concentration, and stimulate sportsmanship.<p>
+                   
                 </div>
             </div>
         </div>
