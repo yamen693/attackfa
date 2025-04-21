@@ -8,9 +8,131 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
     <link href="./attack (1).png" rel="icon" type="image/png"/>
+    <script src="https://kit.fontawesome.com/843a6e712c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-  
+     
     <style>
+              
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+          }
+      
+          iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+          }
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-slideDown {
+    animation: slideDown 0.3s ease-out;
+  }
+  
+        
+        *{
+            border: none;
+        }
+        .contact-fab {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: rgb(232, 181, 70);
+            color: white;
+            border-radius: 50%;
+            box-shadow: 0 8px 15px rgb(232, 181, 70);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+          
+          .contact-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 18px rgb(232, 181, 70);
+          }
+         
+          
+        
+          
+      
+        footer{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10;
+            padding: 0;
+            background-color: #f4f4f4;
+          }
+          
+          .arrow {
+        border: none;
+            font-size: 30px;
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            
+            color: #000000;
+            padding: 10px;
+            border-radius: 25px;
+            z-index: 1000;
+            
+            transition: transform 0.3s ease;
+            
+          }
+          
+   
+      
+          /* Mobile menu styles */
+          * {
+            font-family: 'Roboto', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+        #mobile-menu {
+            position: absolute;
+            top: 100%;
+            right: 0px; /* Adds spacing from the right */
+            width: 40%; /* Adjust width for a smaller size */
+            max-width: 350px; /* Limit max width */
+            background:transparent;
+            border-radius: 10px;
+            padding: 10px;
+            display: none;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+    
+        #mobile-menu.open {
+            display: flex;
+            opacity: 1;
+            transform: translateX(60);
+        }
+        #lp{
+            background-size: contain;
+        }
+        marquee{
+            font: xx-large;
+            width: 100%;
+
+        }
         @keyframes magicIn {
             0% {
                 opacity: 0;
@@ -76,100 +198,153 @@
     border-radius: 6px;
     border: 3px solid black;
 }
+/* Default background color for the nav */
+nav {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+/* Background color when scrolling */
+nav.scrolled {
+    background-color: black;
+}
+
+
+.social-media {
+    position: fixed;
+    bottom: 90px;
+    left: 20px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: none; /* Make sure no background */
+    box-shadow: none;  /* Remove box shadow */
+    border: none;      /* Remove border */
+  }
+  
+  .social-media ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: none; /* Kill background */
+    box-shadow: none;
+    border: none;
+  }
+  
+  .social-media li {
+    padding: 12px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .social-media li:hover {
+    background-color: rgb(232, 181, 70);
+    transform: scale(1.1);
+  }
+  
+
+  
     </style>
 </head>
-<body class="bg-off-white">
+<body  style="background-color:whitesmoke;">
     <!-- Intro Page -->
     <div class="intro-screen" id="intro">
         <img alt="Attack Academy Logo" class="intro-logo" height="48" src="./attack (1).png" width="48"/>
     </div>
     <!-- News Ticker -->
-    <div class="bg-gradient-to-r from-black via-[rgb(232,181,70)] to-[rgb(232,181,70)]text-white py-2 text-center">
-        <marquee behavior="scroll" direction="left">
-            مرحبا بكم في أكاديمية أتاك لكرة القدم! التسجيل للموسم الجديد مفتوح الآن. انضم إلينا لتطوير مهاراتك وحبك للعبة!
+    <div class="bg-gradient-to-r from-[rgb(214,255,60)]  via-[rgb(214,255,60)]text-white py-2 text-center">
+        <marquee behavior="scroll" direction="right">
+        <h1> Ramdan offer <span style="color: rgb(255, 0, 0);"> 70%</span> OF</h1>
+        
         </marquee>
        </div>
-   <!-- Header -->
-   <header class="fixed top-0 left-0 w-full z-10 bg-transparent shadow-md">
-    <div class="flex items-center justify-between p-4 transition-all duration-300 ease-in-out">
-        <div class="flex items-center">
-            <img alt="Attack Academy Logo" class="h-20 w-20 transition-transform duration-300 hover:scale-110" height="80" src="./attack (1).png" style="align-items: center;" width="80"/>
-            <h1 class="text-2xl font-small text-white ml-4">Attack Academy</h1>
+       <header class="fixed top-0 left-0 w-full z-10 bg-transparent shadow-md">
+        <div class="flex items-center justify-between p-4 transition-all duration-300 ease-in-out">
+            <div class="flex items-center">
+                <img alt="Attack Academy Logo" class="h-20 w-20 transition-transform duration-300 hover:scale-110" height="80" src="./attack (1).png" style="align-items: center;" width="80"/>
+                <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white ml-4">Attack Academy</h1>
+
+            </div>
+            <nav class="flex items-center ml-auto transition-all duration-300 ease-in-out">
+                <div class="md:flex md:space-x-4 hidden" id="desktop-menu">
+                    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 space-x-6">
+                        <li class="mr-4">
+                            <li><a href="#about" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                                data-section="about" >About</a></li>
+                            <li><a href="#vision" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                                data-section="vision">Vision</a></li>
+                            <li><a href="#mission" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                                data-section="mission">Mission</a></li>
+                            <li><a href="#programs" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                                data-section="programs">Programs</a></li>
+                        </li>
+                        <li  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" >
+                            <a  href="./reels.html">Reels</a>
+                        </li>
+                        <li  class="bg-yellow-300 text-black px-4 py-1 rounded-xl">
+                            <a  href="https://yamen693.github.io/attack-final/">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="relative ml-6 space-x-6 mr-6" >
+                    <button class="bg-transparent text-white nav-link flex items-center transition-colors duration-300 ease-in-out hover:text-yellow-500" id="language-button"  aria-haspopup="true" aria-expanded="false">
+                        <span><i class="fa-solid fa-language" style="color: #e8b546;"></i></span>
+                        <i class="fas fa-chevron-down ml-2"></i>
+                    </button>
+                    <ul class="absolute right-0 mt-2 w-32 bg-white text-black rounded-lg shadow-lg hidden" id="language-menu">
+                        <li class="language-option px-4 py-2 hover:bg-gray-200" data-lang="en">
+                            <a href="./index.html" class="block w-full h-full">EN</a>
+                        </li>
+                        <li class="language-option px-4 py-2 hover:bg-gray-200" data-lang="ar">
+                            <a href="index .html" class="block w-full h-full">AR</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="md:hidden">
+                    <button class="text-white focus:outline-none" id="mobile-menu-button">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
         </div>
-        <nav class="flex items-center ml-auto transition-all duration-300 ease-in-out">
-            <div class="md:flex md:space-x-4 hidden" id="desktop-menu">
-                <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0">
-                    <li class="mr-4">
-                        <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">About Us</a>
-                    </li>
-                    <li class="mr-4">
-                        <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">Vision</a>
-                    </li>
-                    <li class="mr-4">
-                        <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#mission">Mission</a>
-                    </li>
-                    <li class="mr-4">
-                        <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#programs">Our Programs</a>
-                    </li>
-                    <li class="mr-4">
-                        <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">Reels</a>
-                    </li>
-                    <li class="mr-4">
-                        <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="relative mr-4">
-                <button class="bg-transparent text-white nav-link flex items-center transition-colors duration-300 ease-in-out hover:text-yellow-500" id="language-button">
-                    <span>EN</span>
-                    <i class="fas fa-chevron-down ml-2"></i>
-                </button>
-                <ul class="absolute right-0 mt-2 w-32 bg-white text-black rounded-lg shadow-lg hidden" id="language-menu">
-                    <li class="px-4 py-2 hover:bg-gray-200" data-lang="en" href="./index.html" >
-                        <a class="language-option" href="./index.html">EN</a>
-                    </li>
-                 
-                    <li class="px-4 py-2 hover:bg-gray-200" data-lang="ar"  href="./index .html">
-                        <a class="language-option" href="./index .html">AR</a>
-                    </li>
-                   
-                       
-                    
-                </ul>
-            </div>
-            <div class="md:hidden">
-                <button class="text-white focus:outline-none" id="mobile-menu-button">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </nav>
-    </div>
-    <div class="md:hidden bg-white shadow-md hidden" id="mobile-menu">
-        <ul class="flex flex-col space-y-2 p-4">
-            <li>
-                <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">About Us</a>
-            </li>
-            <li>
-                <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">Vision</a>
-            </li>
-            <li>
-                <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#mission">Mission</a>
-            </li>
-            <li>
-                <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#programs">Our Programs</a>
-            </li>
-            <li class="mr-4">
-                <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">Reels</a>
-            </li>
-            <li>
-                <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
-            </li>
-        </ul>
-    </div>
-</header>
+        <div id="mobile-menu" class="hidden animate-slideDown ...">
+
+            <ul class="flex flex-col space-y-2 p-4">
+                <li class="mr-4">
+                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="./index.html">HOME</a>
+                </li>
+                <li>
+                    <a class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="#about">About Us</a>
+                </li>
+                <li>
+                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="#vision">Vision</a>
+                </li>
+                <li>
+                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="#mission">Mission</a>
+                </li>
+                <li>
+                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="#programs">Our Programs</a>
+                </li>
+                <li class="mr-4">
+                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="./reels.html">Reels</a>
+                </li>
+                <li>
+                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="https://yamen693.github.io/attack-final/">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </header>
 <section class="relative">
     <section class="relative" id="lp">
-        <img alt="Football field with players practicing" class="w-full h-[750PX] object-background-size:contain" height="750" src="./new cover.png" width="100%"/>
+        <img alt="Football field with players practicing" class="w-full h-[500] object-background-size:[340px]" height="500" src="cover.png" width="100%"/>
+        
        </section>
 
     <section class="py-12 bg-white fade-in" id="about">
@@ -182,18 +357,18 @@
             </p>
         </div>
     </section>
-    <section class="py-12 bg-white transition-all duration-300 ease-in-out" id="vision">
+    <section class="py-12  transition-all duration-300 ease-in-out" id="vision">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-4 gradient-text slide-in"> رؤيتنا</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Vision image showing a football field with a clear sky" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/no3WaNQVEYZ3J5YKCpdZpqJmzWLt34xGzcyEetmegSVRZHHUA.jpg" width="384"/>
+                <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <img alt="Vision image showing a football field with a clear sky" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_9149-Enhanced-NR.jpg" width="384"/>
                     <p class="text-black mb-4 transition-text-white">
                         أن نصبح نموذجًا رياديًا في تطوير لاعبي كرة القدم الشباب على المستوى المحلي والإقليمي، من خلال توفير بيئة تعليمية ورياضية متكاملة تُعزز من مهاراتهم البدنية والفنية والعقلية، مع غرس قيم الروح الرياضية والانضباط والاحترافية، لتخريج لاعبين قادرين على تحقيق النجاح داخل وخارج الملعب.
                     </p>
-                </div>
+                </div >
                 <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Vision image showing a group of young football players in action" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/etuLKDfNBAkBK0vapoQ17gXWdwlt7kwIo35Ojiz02SCDZHHUA.jpg" width="384"/>
+                    <img alt="Vision image showing a group of young football players in action" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_9171-Enhanced-NR.jpg" width="384"/>
                     <p class="text-black mb-4 transition-text-white">
                         مكونات هذه الرؤية:
                         ۱- التطوير الشامل: التركيز على الجوانب الفنية، البدنية، والعقلية للاعبين. 
@@ -205,18 +380,18 @@
             </div>
         </div>
     </section>
-    <section class="py-12 bg-white transition-all duration-300 ease-in-out" id="mission">
+    <section class="py-12  transition-all duration-300 ease-in-out" id="mission">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">مهمتنا</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Mission image showing a coach instructing young players" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/LsWzMNaWzEKlC9ZDbQeYkmod0fdHbGNkkp2fgyvknQuVyOOoA.jpg" width="384"/>
+                <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <img alt="Mission image showing a coach instructing young players" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_8947-Enhanced-NR.jpg" width="384"/>
                     <p class="text-black mb-4 transition-text-white">
                         مهمتنا هي تقديم برامج تدريبية عالية الجودة تركز على التطوير البدني والفني والنفسي والتكتيكي للاعبينا.
                     </p>
                 </div>
-                <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Mission image showing young players celebrating a goal" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/4BkHeniIeffeXhW2bEdetMs4xs6rGK2dfYbMCzUXi2QgisjDKA.jpg" width="384"/>
+                <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <img alt="Mission image showing young players celebrating a goal" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_9130-Enhanced-NR.jpg" width="384"/>
                     <p class="text-black mb-4 transition-text-white">
                         نحن نسعى جاهدين لغرس قيم العمل الجماعي والانضباط والروح الرياضية في لاعبينا، وإعدادهم للنجاح داخل وخارج الملعب.
                     </p>
@@ -224,12 +399,12 @@
             </div>
         </div>
     </section>
-    <section class="py-12 bg-white transition-all duration-300 ease-in-out" id="programs">
+    <section class="py-12  transition-all duration-300 ease-in-out" id="programs">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">Our Programs</h2>
+            <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">برامجنا</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Young football players practicing basic skills" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/IM2BoHb5LsLlHVfkjskMrkak5wwkcreX4zewTkLtWgPNyOOoA.jpg" width="384"/>
+                    <img alt="Young football players practicing basic skills" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./Screenshot 2025-04-03 104058.png" width="384"/>
                     <h3 class="card-title" style="text-bold">
                         البرامج التدريبية للمهارات الفنية</h3>
                         <br>
@@ -237,7 +412,7 @@
                     <!-- <p class="price">$100/month</p> -->
                 </div>
                 <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Intermediate football players improving their skills" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/FaWyz9d7rWobNZDZcCnNztbd2DFtTbAjq8cQfDagarmlsjDKA.jpg" width="384"/>
+                    <img alt="Intermediate football players improving their skills" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_8968-Enhanced-NR.jpg" width="384"/>
                     <h3 class="card-title"> البرامج المخصصة للتطوير البدني</h3>
                     <br>
                     <p>لا يقتصر التدريب على المهارات الفنية فقط، بل يشمل أيضًا إعداد اللاعبين بدنيًا لتحمل الضغوط والمجهود البدني أثناء المباريات. يشمل ذلك تدريبات اللياقة البدنية، القوة العضلية، والتوازن والمرونة.
@@ -245,7 +420,7 @@
                    
                 </div>
                 <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Advanced football players in action" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/WG60gyBtMG7ZPhC6TSedKxmt26aQBoUgS451kDr5GKWksjDKA.jpg" width="384"/>
+                    <img alt="Advanced football players in action" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_8984-Enhanced-NR.jpg" width="384"/>
                     <h3 class="card-title">الجانب الذهني والنفسي</h3>
                     <br>
                     <p>
@@ -255,67 +430,175 @@
             </div>
         </div>
     </section>
-    <section class="py-12 bg-gradient-to-r from-black to-[rgb(232,181,70)] transition-all duration-300 ease-in-out" id="maggie-section">
-        <div class="container mx-auto flex flex-col md:flex-row items-center md:items-start">
-            <img alt="Portrait of a woman with blonde hair and a green shirt" class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-8 hover:scale-105 transition-transform duration-300 ease-in-out" height="200" src="https://storage.googleapis.com/a1aa/image/9zEG77v58M5XN11gtSRKmucyYsxyjM7QHFEEsGW3GXCU2xBF.jpg" width="200"/>
-            <div class="text-center md:text-left">
-                <h1 class="text-3xl font-bold mb-4 text-white">
-                    <br/>
-                    إداري ماهر
-                    <br/>
-                    دعم محترف
-                </h1>
-                <p class="text-white mb-6">
-                    أنا فقرة. انقر هنا لإضافة النص الخاص بك وتحريري. إنه سهل. ما عليك سوى النقر على "تحرير النص" أو النقر نقرًا مزدوجًا فوقي لإضافة المحتوى الخاص بك وإجراء تغييرات على الخط.
-                </p>
-            </div>
+    <section class="py-12 px-4 sm:px-8 bg-gradient-to-r from-white to-[rgb(232,181,70)] transition-all duration-300 ease-in-out" id="maggie-section">
+        <div class="container mx-auto flex flex-col md:flex-row-reverse items-center md:items-start md:space-x-12 md:space-x-reverse">
+          
+          <!-- الصور -->
+          <div class="flex flex-row items-center justify-center space-x-6 space-x-reverse mb-6 md:mb-0 md:space-x-12 md:space-x-reverse">
+            
+            <!-- صورة المالك -->
+            <img 
+              alt="صورة شوقي عادل" 
+              class="w-32 h-32 md:w-48 md:h-48 rounded-full hover:scale-105 transition-transform duration-300 ease-in-out ring-2 ring-yellow-400" 
+              src="./cropped_image.png" 
+            />
+      
+            <!-- صورة الشريك -->
+            <img 
+              alt="صورة شريك الأكاديمية" 
+              class="w-32 h-32 md:w-48 md:h-48 rounded-full hover:scale-105 transition-transform duration-300 ease-in-out ring-2 ring-yellow-400 rotate-3" 
+              src="roushdy.png" 
+            />
+          </div>
+      
+          <!-- النص -->
+          <div class="text-center md:text-right md:max-w-xl" dir="rtl" style="color: #000;">
+            <h3 class="text-2xl font-bold mb-4">ملاك الأكاديمية</h3>
+            <p class="text-lg leading-relaxed">
+              أسستُ هذه الأكاديمية لتقديم تدريب احترافي بأعلى جودة، مع برنامج متكامل لتطوير المهارات الفنية والبدنية والذهنية. نلتزم بصناعة لاعبين مميزين، ونطمح للوصول إلى أعلى المستويات في تطوير وتسويق اللاعبين.
+            </p>
+          </div>
+      
         </div>
-    </section>
-    <footer class="bg-[rgb(232,181,70)] text-black py-4 transition-all duration-300 ease-in-out">
-        <div class="container mx-auto text-center transition-text">
-            <p class="transition-text hover:text-white">© 2024 أكاديمية أتاك. جميع الحقوق محفوظة.</p>
-            <div class="flex justify-center space-x-4 mt-4">
-                <a class="text-black hover:text-white transition-colors duration-300 ease-in-out" href="https://www.facebook.com/share/15kEBiVWmL/" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-               <a class="text-black hover:text-white transition-colors duration-300 ease-in-out" href="https://www.instagram.com/attack_fa_?igsh=MWlsajQ0dmZiMnd2OQ==" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a class="text-black hover:text-white transition-colors duration-300 ease-in-out" href="https://www.tiktok.com/@attack.football.a" target="_blank">
-                    <i class="fab fa-tiktok">
-                    </i>
-                   </a>
-              
+      </section>
+      
+      
+      <div class="contact-fab" onclick="toggleSocialMedia()">
+        <i class="fa-solid fa-comments"></i>
+      </div>
+      
+      <div hidden class="social-media" id="social-media">
+        <ul>
+          <li>
+            <a href="tel:01128043787">
+              <i class="fa-solid fa-phone" style="color: #64ef61;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/01128043787">
+              <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      
+      
+    <footer class="bg-[rgb(232,181,70)] text-black py-6 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start space-y-6 md:space-y-0">
+          
+          <!-- Left: Texts -->
+          <div class="text-center md:text-left">
+            <p>© 2024 Attack Academy. All rights reserved.</p>
+            <p class="mt-2">
+              Coaches: To apply for a job click 
+              <a href="https://wa.me/201128043787" class="hover:text-white border-b border-black transition-colors duration-300">here</a> 
+              or for telephone 
+              <a href="tel:01128043787" class="hover:text-white border-b border-black transition-colors duration-300">here</a>.
+            </p>
+      
+            <!-- Social Icons -->
+            <div class="flex justify-center md:justify-start space-x-4 mt-4">
+              <a href="https://www.facebook.com/share/15kEBiVWmL/" target="_blank" class="bg-black text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-[rgb(232,181,70)] hover:text-black transition-colors duration-300">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/attack_fa_?igsh=MWlsajQ0dmZiMnd2OQ==" target="_blank" class="bg-black text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-[rgb(232,181,70)] hover:text-black transition-colors duration-300">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.tiktok.com/@attack.football.a" target="_blank" class="bg-black text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-[rgb(232,181,70)] hover:text-black transition-colors duration-300">
+                <i class="fab fa-tiktok"></i>
+              </a>
             </div>
+          </div>
+      
+          <div class="mt-10 text-center">
+            <h2 class="text-xl md:text-2xl font-bold text-black mb-4">Our Partners:</h2>
+            <div class="flex flex-wrap justify-center items-center gap-6">
+              <img src="body.png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" />
+              <img src="Untitled copy.png" alt="Partner 2" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" />
+              <img src="./no bg nfchild.png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" />
+              <img src="WhatsApp-Image-2024-10-04-at-15.png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" />
+            </div>
+          </div>
         </div>
-    </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        <div class="map-container"
+        >
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.9095633585316!2d31.43691627559366!3d30.010753074940606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583cd1fe5110ad%3A0x5d78f365cfac5f22!2sEl%20Ghad%20El%20Moshreq%20Language%20Institute!5e0!3m2!1sen!2seg!4v1744724278276!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      </footer>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // LANGUAGE MENU TOGGLE
             const languageButton = document.getElementById('language-button');
             const languageMenu = document.getElementById('language-menu');
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            languageButton.addEventListener('click', function() {
+    
+            languageButton.addEventListener('click', function (e) {
+                e.stopPropagation(); // Prevent click from bubbling up
                 languageMenu.classList.toggle('hidden');
             });
-
-            document.addEventListener('click', function(event) {
+    
+            document.addEventListener('click', function (event) {
                 if (!languageButton.contains(event.target) && !languageMenu.contains(event.target)) {
                     languageMenu.classList.add('hidden');
                 }
             });
-
-            mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
+    
+            // MOBILE MENU TOGGLE
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+    
+            mobileMenuButton.addEventListener('click', function () {
+                if (mobileMenu.classList.contains("open")) {
+                    mobileMenu.style.display = "none";
+                    setTimeout(() => mobileMenu.classList.remove("open"), 300);
+                } else {
+                    mobileMenu.style.display = "block";
+                    setTimeout(() => mobileMenu.classList.add("open"), 10);
+                }
             });
+    
+            // INTRO SECTION HIDE
+            const intro = document.getElementById('intro');
+            if (intro) {
+                setTimeout(function () {
+                    intro.classList.add('hidden');
+                }, 3000);
+            }
+    
+            // SOCIAL MEDIA TOGGLE
+            window.toggleSocialMedia = function () {
+                const sm = document.getElementById('social-media');
+                if (sm) {
+                    sm.classList.toggle('open');
+                    sm.hidden = !sm.hidden;
+                }
+            };
         });
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                document.getElementById('intro').classList.add('hidden');
-            }, 3000);
+                // Handle language selection
+    document.querySelectorAll(".language-option").forEach(item => {
+        item.addEventListener("click", () => {
+            const lang = item.getAttribute("data-lang");
+            if (lang === "en") {
+                window.location.href = "./index.html";
+            } else if (lang === "ar") {
+                window.location.href = "./index.html"; // Replace if there's an Arabic version
+            }
         });
+    });
+  
+    // Optional: Close the menu if clicked outside
+    document.addEventListener("click", (e) => {
+        if (!langButton.contains(e.target) && !langMenu.contains(e.target)) {
+            langMenu.classList.add("hidden");
+        }
+    });
+    document.querySelectorAll(".language-option").forEach(item => {
+        item.addEventListener("click", () => {
+            const href = item.getAttribute("data-href");
+            window.location.href = href;
+        });
+    });
     </script>
+    
     <script src="./index.js"></script>
 </body>
 </html>

@@ -8,7 +8,80 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
     <link href="./attack (1).png" rel="icon" type="image/png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        .social-media {
+            position: fixed;
+            bottom: 90px;
+            left: 20px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: none; /* Make sure no background */
+            box-shadow: none;  /* Remove box shadow */
+            border: none;      /* Remove border */
+          }
+          
+          .social-media ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: none; /* Kill background */
+            box-shadow: none;
+            border: none;
+          }
+          
+          .social-media li {
+            padding: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+          }
+          
+          .social-media li:hover {
+            background-color: rgb(232, 181, 70);
+            transform: scale(1.1);
+          }
+        .contact-fab {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: rgb(232, 181, 70);
+            color: white;
+            border-radius: 50%;
+            box-shadow: 0 8px 15px rgb(232, 181, 70);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+          
+          .contact-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 18px rgb(232, 181, 70);
+          }
+        @keyframes fadeInZoom {
+            0% {
+              opacity: 0;
+              transform: scale(0.95);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+          .animation-fade-zoom {
+            animation: fadeInZoom 0.6s ease forwards;
+          }
         @keyframes magicIn {
                  0% {
                      opacity: 0;
@@ -72,192 +145,339 @@
                  border-radius: 6px;
                  border: 3px solid black;
              }
+             .arrow {
+                border: none;
+                    font-size: 30px;
+                    position: fixed;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                    
+                    color: #000000;
+                    padding: 10px;
+                    border-radius: 25px;
+                    z-index: 1000;
+                    
+                    transition: transform 0.3s ease;
+                    
+                  }
+                  
+                  .arrow:hover {
+                    transform: translateY(-50%) scale(1.1);
+                  }
+                  
+                  .social-media {
+                    border: none;
+                    border-radius: 50;
+                    position: fixed;
+                    left: 0;
+                    top: 50%;
+                    width: 50px; /* Thinner width */
+                    height:200px; /* Adjust the height as needed */
+                    background-color: transparent;
+                    color: #fff;
+                    transition: width 0.3s ease;
+                    overflow: hidden;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+                    margin-top: 10px;
+                    
+                    
+                  }
+                  
+                  .social-media ul {
+                    list-style-type:circle;
+                    padding: 10px;
+                    margin: 0;
+                    display: none; /* Initially hidden */
+                  }
+                  
+                  .social-media.open {
+                    width: 100px; /* Expand to show the full menu */
+                    display: flex; /* Show the list when open */
+                    flex-direction: column; /* Stack the list vertically */
+                    align-items: center; /* Center the list items */
+                    justify-content: center; /* Center the list items vertically */
+                    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                    background: #000;
+                  }
+                  
+                  .social-media.open ul {
+                    display: flow-root; /* Show the list when open */
+                    
+                  }
+                  
+                  .social-media ul li {
+                    margin: 10px 0;
+                  }
+                  
+                  .social-media ul li a {
+                    color: #fff;
+                    text-decoration: none;
+                    font-size: 14px;
+                    padding: 5px 10px;
+                    display: block;
+                    transition: background-color 0.3s ease;
+                  }
+                  
+                  .social-media ul li a:hover {
+                    background-color:rgb(232, 181, 70);
+                    border-radius: 25px;
+                    
+                  }
+                  #mobile-menu {
+                    position: absolute;
+                    top: 100%;
+                    right: 0px; /* Adds spacing from the right */
+                    width: 40%; /* Adjust width for a smaller size */
+                    max-width: 350px; /* Limit max width */
+                    background:transparent;
+                    border-radius: 10px;
+                    padding: 10px;
+                    display: none;
+                    opacity: 0;
+                    transform: translateY(-10px);
+                    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                }
+            
+                #mobile-menu.open {
+                    display: flex;
+                    opacity: 1;
+                    transform: translateX(60);
+                }
+               
+  #videoSection {
+    overflow: hidden;
+  }
+
+  .navigation-btn {
+    position: fixed;
+    z-index: 50;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .navigation-btn:active {
+    transform: scale(0.9);
+  }
+  .prev-btn { top: 50%; left: 10px; transform: translateY(-50%); }
+  .next-btn { top: 50%; right: 10px; transform: translateY(-50%); }
+                  
        </style>
 </head>
 <body class="bg-off-white">
+    <!-- Header -->
     <header class="fixed top-0 left-0 w-full z-10 bg-transparent shadow-md">
         <div class="flex items-center justify-between p-4 transition-all duration-300 ease-in-out">
             <div class="flex items-center">
                 <img alt="Attack Academy Logo" class="h-20 w-20 transition-transform duration-300 hover:scale-110" height="80" src="./attack (1).png" style="align-items: center;" width="80"/>
-            
+                <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white  ml-4">Attac<span style="color:rgb(232,181,70) ;">k</span> Academy</h1>
+
             </div>
             <nav class="flex items-center ml-auto transition-all duration-300 ease-in-out">
                 <div class="md:flex md:space-x-4 hidden" id="desktop-menu">
-                    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0">
+                    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 space-x-6">
                         <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#about">About Us</a>
+                            <li><a href="#about" class="bg-yellow-300 text-black   px-4 py-1 rounded-xl"
+                                data-section="about" >About</a></li>
+                            <li><a href="#vision" class="bg-yellow-300 text-black   px-4 py-1 rounded-xl"
+                                data-section="vision">Vision</a></li>
+                            <li><a href="#mission" class="bg-yellow-300 text-black   px-4 py-1 rounded-xl"
+                                data-section="mission">Mission</a></li>
+                            <li><a href="#programs" class="bg-yellow-300 text-black  px-4 py-1 rounded-xl"
+                                data-section="programs">Programs</a></li>
                         </li>
-                        <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#vision">Vision</a>
+                        <li  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" >
+                            <a  href="./reels.html">Reels</a>
                         </li>
-                        <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#mission">Mission</a>
-                        </li>
-                        <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#programs">Our Programs</a>
-                        </li>
-                        <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">Reels</a>
-                        </li>
-                        <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
+                        <li  class="bg-yellow-300 text-black px-4 py-1 rounded-xl">
+                            <a  href="https://yamen693.github.io/attack-final/">Contact</a>
                         </li>
                     </ul>
                 </div>
-                <div class="relative mr-4">
-                    <button class="bg-transparent text-black nav-link flex items-center transition-colors duration-300 ease-in-out hover:text-yellow-500" id="language-button">
-                        <span>EN</span>
+                
+                <div class="relative ml-6 space-x-10 mr-6 " >
+                    <button class="bg-transparent text-white nav-link flex items-center transition-colors duration-300 ease-in-out hover:text-yellow-500" id="language-button"  aria-haspopup="true" aria-expanded="false">
+                        <span><i class="fa-solid fa-language" style="color: #e8b546;"></i></span>
                         <i class="fas fa-chevron-down ml-2"></i>
                     </button>
                     <ul class="absolute right-0 mt-2 w-32 bg-white text-black rounded-lg shadow-lg hidden" id="language-menu">
-                        <li class="px-4 py-2 hover:bg-gray-200" data-lang="en" href="./index.html" >
-                            <a class="language-option" href="./index.html">EN</a>
-                        </li>
-                     
-                        <li class="px-4 py-2 hover:bg-gray-200" data-lang="ar"  href="./index .html">
-                            <a class="language-option" href="./index .html">AR</a>
-                        </li>
-                       
-                           
-                        
-                    </ul>
+                      <li class="language-option px-4 py-2 hover:bg-gray-200" data-lang="en">
+                          <a href="./index.html" class="block w-full h-full">EN</a>
+                      </li>
+                      <li class="language-option px-4 py-2 hover:bg-gray-200" data-lang="ar">
+                          <a href="index .html" class="block w-full h-full">AR</a>
+                      </li>
+                  </ul>
+                  
                 </div>
+                
                 <div class="md:hidden">
-                    <button class="text-black focus:outline-none" id="mobile-menu-button">
+                    <button class="text-white focus:outline-none" id="mobile-menu-button">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
             </nav>
         </div>
-        <div class="md:hidden bg-white shadow-md hidden" id="mobile-menu">
+        <div id="mobile-menu" class="hidden animate-slideDown ...">
+
             <ul class="flex flex-col space-y-2 p-4">
-                <li>
-                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#about">About Us</a>
+                <li class="mr-4">
+                    <a  class="bg-yellow-300 text-white px-4 py-1 rounded-xl" href="./index.html">HOME</a>
                 </li>
                 <li>
-                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#vision">Vision</a>
+                    <a class="bg-yellow-300 text-white px-4 py-1 rounded-xl" href="#about">About Us</a>
                 </li>
                 <li>
-                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index .html#mission">Mission</a>
+                    <a  class="bg-yellow-300 text-white px-4 py-1 rounded-xl" href="#vision">Vision</a>
                 </li>
                 <li>
-                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#programs">Our Programs</a>
+                    <a  class="bg-yellow-300 text-white px-4 py-1 rounded-xl" href="#mission">Mission</a>
+                </li>
+                <li>
+                    <a  class="bg-yellow-300 text-white px-4 py-1 rounded-xl" href="#programs">Our Programs</a>
                 </li>
                 <li class="mr-4">
-                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">Reels</a>
+                    <a  class="bg-yellow-300 text-white  px-4 py-1 rounded-xl" href="./reels.html">Reels</a>
                 </li>
                 <li>
-                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
+                    <a  class="bg-yellow-300 text-white  px-4 py-1 rounded-xl" href="https://yamen693.github.io/attack-final/">Contact</a>
                 </li>
             </ul>
         </div>
-    </header>
+    </header> 
 
-    <section class="py-12 bg-white fade-in" id="reels">
-        <div class="container mx-auto text-center">
-         <h2 class="text-3xl font-bold mb-4 gradient-text">
-          Reels
-         </h2>
-         <div class="flex flex-col items-center gap-8">
-          <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out w-full md:w-1/2 lg:w-1/3">
-           <video class="w-full h-[calc(100vh-200px)] object-cover rounded-lg mb-4" controls="">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-           </video>
-           <h3 class="card-title">
-            Reel 1
-           </h3>
-           <p>
-            Highlights from our latest match.
-           </p>
+    <section id="reels" class="h-screen overflow-y-scroll snap-y snap-mandatory bg-black text-white">
+        <div class="flex flex-col">
+      
+          <!-- Reel 1 -->
+          <div class="snap-start h-screen flex flex-col items-center justify-center relative px-4 py-8 opacity-0">
+            <video
+              class="w-full max-w-md h-[70vh] object-cover rounded-lg shadow-lg"
+              muted
+              playsinline
+              preload="auto"
+            >
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+            </video>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-bold">Reel 1</h3>
+              <p class="text-sm">Highlights from our latest match.</p>
+            </div>
           </div>
-          <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out w-full md:w-1/2 lg:w-1/3">
-           <video class="w-full h-[calc(100vh-200px)] object-cover rounded-lg mb-4" controls="">
-            <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-           </video>
-           <h3 class="card-title">
-            Reel 2
-           </h3>
-           <p>
-            Training session highlights.
-           </p>
+      
+          <!-- Reel 2 -->
+          <div class="snap-start h-screen flex flex-col items-center justify-center relative px-4 py-8 opacity-0">
+            <video
+              class="w-full max-w-md h-[70vh] object-cover rounded-lg shadow-lg"
+              muted
+              playsinline
+              preload="auto"
+            >
+              <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+            </video>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-bold">Reel 2</h3>
+              <p class="text-sm">Training session highlights.</p>
+            </div>
           </div>
-          <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out w-full md:w-1/2 lg:w-1/3">
-           <video class="w-full h-[calc(100vh-200px)] object-cover rounded-lg mb-4" controls="">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-           </video>
-           <h3 class="card-title">
-            Reel 3
-           </h3>
-           <p>
-            Player interviews and behind the scenes.
-           </p>
+      
+          <!-- Reel 3 -->
+          <div class="snap-start h-screen flex flex-col items-center justify-center relative px-4 py-8 opacity-0">
+            <video
+              class="w-full max-w-md h-[70vh] object-cover rounded-lg shadow-lg"
+              muted
+              playsinline
+              preload="auto"
+            >
+              <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+            </video>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-bold">Reel 3</h3>
+              <p class="text-sm">Training session highlights.</p>
+            </div>
           </div>
-          <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out w-full md:w-1/2 lg:w-1/3">
-           <video class="w-full h-[calc(100vh-200px)] object-cover rounded-lg mb-4" controls="">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-           </video>
-           <h3 class="card-title">
-            Reel 4
-           </h3>
-           <p>
-            Best goals of the season.
-           </p>
+      
+          <!-- Reel 4 -->
+          <div class="snap-start h-screen flex flex-col items-center justify-center relative px-4 py-8 opacity-0">
+            <video
+              class="w-full max-w-md h-[70vh] object-cover rounded-lg shadow-lg"
+              muted
+              playsinline
+              preload="auto"
+            >
+              <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+            </video>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-bold">Reel 4</h3>
+              <p class="text-sm">Training session highlights.</p>
+            </div>
           </div>
-          <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out w-full md:w-1/2 lg:w-1/3">
-           <video class="w-full h-[calc(100vh-200px)] object-cover rounded-lg mb-4" controls="">
-            <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-           </video>
-           <h3 class="card-title">
-            Reel 5
-           </h3>
-           <p>
-            Behind the scenes of our training camp.
-           </p>
+      
+          <!-- Reel 5 -->
+          <div class="snap-start h-screen flex flex-col items-center justify-center relative px-4 py-8 opacity-0">
+            <video
+              class="w-full max-w-md h-[70vh] object-cover rounded-lg shadow-lg"
+              muted
+              playsinline
+              preload="auto"
+            >
+              <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+            </video>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-bold">Reel 5</h3>
+              <p class="text-sm">Training session highlights.</p>
+            </div>
           </div>
-          <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out w-full md:w-1/2 lg:w-1/3">
-           <video class="w-full h-[calc(100vh-200px)] object-cover rounded-lg mb-4" controls="">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-           </video>
-           <h3 class="card-title">
-            Reel 6
-           </h3>
-           <p>
-            Interviews with our coaches.
-           </p>
+      
+          <!-- Reel 6 -->
+          <div class="snap-start h-screen flex flex-col items-center justify-center relative px-4 py-8 opacity-0">
+            <video
+              class="w-full max-w-md h-[70vh] object-cover rounded-lg shadow-lg"
+              muted
+              playsinline
+              preload="auto"
+            >
+              <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+            </video>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-bold">Reel 6</h3>
+              <p class="text-sm">Training session highlights.</p>
+            </div>
           </div>
-          <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out w-full md:w-1/2 lg:w-1/3">
-           <video class="w-full h-[calc(100vh-200px)] object-cover rounded-lg mb-4" controls="">
-            <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-           </video>
-           <h3 class="card-title">
-            Reel 7
-           </h3>
-           <p>
-            Highlights from our community events.
-           </p>
-          </div>
-          <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out w-full md:w-1/2 lg:w-1/3">
-           <video class="w-full h-[calc(100vh-200px)] object-cover rounded-lg mb-4" controls="">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-           </video>
-           <h3 class="card-title">
-            Reel 8
-           </h3>
-           <p>
-            Special moments from our academy.
-           </p>
-          </div>
-         </div>
+      
         </div>
-       </section>
+      </section>
+      
+      
+      <div class="contact-fab" onclick="toggleSocialMedia()">
+        <i class="fa-solid fa-comments"></i>
+      </div>
+      
+      <div hidden class="social-media" id="social-media">
+        <ul>
+          <li>
+            <a href="tel:01128043787">
+              <i class="fa-solid fa-phone" style="color: #64ef61;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/01128043787">
+              <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      
     <footer class="bg-[rgb(232,181,70)] text-black py-4 transition-all duration-300 ease-in-out">
         <div class="container mx-auto text-center transition-text">
             <p class="transition-text hover:text-white">© 2024 Attack Academy. All rights reserved.</p>
@@ -275,26 +495,163 @@
         </div>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const languageButton = document.getElementById('language-button');
-            const languageMenu = document.getElementById('language-menu');
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            languageButton.addEventListener('click', function() {
-                languageMenu.classList.toggle('hidden');
+      
+        document.addEventListener("DOMContentLoaded", () => {
+          const links = document.querySelectorAll(".nav-link");
+          const sections = [...links].map(link => document.getElementById(link.dataset.section));
+      
+          const highlightLink = () => {
+            let scrollPosition = window.scrollY + 120; // adjust for navbar height
+      
+            sections.forEach((section, i) => {
+              if (
+                section.offsetTop <= scrollPosition &&
+                section.offsetTop + section.offsetHeight > scrollPosition
+              ) {
+                links.forEach(link => link.classList.remove("bg-yellow-300", "rounded"));
+                links[i].classList.add("bg-yellow-300", "rounded", "px-3", "py-1");
+              }
             });
-
-            document.addEventListener('click', function(event) {
-                if (!languageButton.contains(event.target) && !languageMenu.contains(event.target)) {
-                    languageMenu.classList.add('hidden');
-                }
-            });
-
-            mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-            });
+          };
+      
+          window.addEventListener("scroll", highlightLink);
         });
-    </script>
+   
+      
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) nav.classList.add('shadow-lg');
+        else nav.classList.remove('shadow-lg');
+      });
+    document.addEventListener('DOMContentLoaded', function () {
+        // LANGUAGE MENU TOGGLE
+        const languageButton = document.getElementById('language-button');
+        const languageMenu = document.getElementById('language-menu');
+
+        languageButton.addEventListener('click', function (e) {
+            e.stopPropagation(); // Prevent click from bubbling up
+            languageMenu.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', function (event) {
+            if (!languageButton.contains(event.target) && !languageMenu.contains(event.target)) {
+                languageMenu.classList.add('hidden');
+            }
+        });
+
+        // MOBILE MENU TOGGLE
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', function () {
+            if (mobileMenu.classList.contains("open")) {
+                mobileMenu.style.display = "none";
+                setTimeout(() => mobileMenu.classList.remove("open"), 300);
+            } else {
+                mobileMenu.style.display = "block";
+                setTimeout(() => mobileMenu.classList.add("open"), 10);
+            }
+        });
+
+        // INTRO SECTION HIDE
+        const intro = document.getElementById('intro');
+        if (intro) {
+            setTimeout(function () {
+                intro.classList.add('hidden');
+            }, 3000);
+        }
+
+        // SOCIAL MEDIA TOGGLE
+        window.toggleSocialMedia = function () {
+            const sm = document.getElementById('social-media');
+            if (sm) {
+                sm.classList.toggle('open');
+                sm.hidden = !sm.hidden;
+            }
+        };
+    });
+                    // Handle language selection
+                    document.querySelectorAll(".language-option").forEach(item => {
+                        item.addEventListener("click", () => {
+                            const lang = item.getAttribute("data-lang");
+                            if (lang === "en") {
+                                window.location.href = "./index.html";
+                            } else if (lang === "ar") {
+                                window.location.href = "./index.html"; // Replace if there's an Arabic version
+                            }
+                        });
+                    });
+                  
+                    // Optional: Close the menu if clicked outside
+                    document.addEventListener("click", (e) => {
+                        if (!langButton.contains(e.target) && !langMenu.contains(e.target)) {
+                            langMenu.classList.add("hidden");
+                        }
+                    });
+                    document.querySelectorAll(".language-option").forEach(item => {
+                        item.addEventListener("click", () => {
+                            const href = item.getAttribute("data-href");
+                            window.location.href = href;
+                        });
+                    });
+                    const containers = document.querySelectorAll("#reels .snap-start");
+                    const videos = document.querySelectorAll("#reels video");
+                  
+                    const observer = new IntersectionObserver(
+                      (entries) => {
+                        entries.forEach((entry) => {
+                          const container = entry.target.closest('.snap-start');
+                          if (entry.isIntersecting) {
+                           
+                            entry.target.play();
+                           
+                            container.classList.add('animation-fade-zoom');
+                          } else {
+                            
+                            entry.target.pause();
+                           
+                            container.classList.remove('animation-fade-zoom');
+                          }
+                        });
+                      },
+                      { threshold: 0.75 }
+                    );
+                  
+                    videos.forEach((video) => observer.observe(video));
+
+            // SOCIAL MEDIA TOGGLE
+            window.toggleSocialMedia = function () {
+                const sm = document.getElementById('social-media');
+                if (sm) {
+                    sm.classList.toggle('open');
+                    sm.hidden = !sm.hidden;
+                }
+            };
+     
+                // Handle language selection
+    document.querySelectorAll(".language-option").forEach(item => {
+        item.addEventListener("click", () => {
+            const lang = item.getAttribute("data-lang");
+            if (lang === "en") {
+                window.location.href = "./index.html";
+            } else if (lang === "ar") {
+                window.location.href = "./index.html"; // Replace if there's an Arabic version
+            }
+        });
+    });
+  
+    // Optional: Close the menu if clicked outside
+    document.addEventListener("click", (e) => {
+        if (!langButton.contains(e.target) && !langMenu.contains(e.target)) {
+            langMenu.classList.add("hidden");
+        }
+    });
+    document.querySelectorAll(".language-option").forEach(item => {
+        item.addEventListener("click", () => {
+            const href = item.getAttribute("data-href");
+            window.location.href = href;
+        });
+    });
+   
+</script>
 </body>
 </html>
