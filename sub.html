@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe to Attack Football Academy</title>
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <style>
+    /* Reset some default styles */
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      transition: opacity 0.6s ease;
+    }
+
+    .form-box {
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      opacity: 0;
+      transform: scale(0.95);
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 24px;
+      transition: color 0.3s ease;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #e8b546;
+      box-shadow: 0 0 10px rgba(232, 180, 70, 0.5);
+    }
+
+    button {
+      width: 100%;
+      background-color: #e8b546;
+      color: white;
+      font-size: 16px;
+      padding: 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d68e1f;
+    }
+
+    .success-message {
+      margin-top: 20px;
+      color: #28a745;
+      font-size: 18px;
+      display: none;
+    }
+
+    .lang-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .lang-toggle:hover {
+      background-color: #e8b546;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 10;
+      display: none;
+      transition: opacity 0.5s ease;
+    }
+
+    .overlay.active {
+      display: block;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="lang-toggle" onclick="toggleLanguage()">العربية</button>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="form-container">
+    <div class="form-box">
+      <h2 id="formTitle">Subscribe to Attack Football Academy</h2>
+      <form id="subscribeForm">
+        <input type="text" name="name" id="name" placeholder="Full Name" required>
+        <input type="email" name="email" id="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" id="phone" placeholder="Phone Number" required>
+        <button type="submit" id="submitBtn">Subscribe</button>
+      </form>
+      <p id="successMessage" class="success-message">Thank you for subscribing!</p>
+    </div>
+  </div>
+
+  <script>
+    // Initialize EmailJS
+    emailjs.init("your_user_id");  // Replace with your user ID from EmailJS
+
+    document.getElementById('subscribeForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Show overlay while submitting
+      document.getElementById('overlay').classList.add('active');
+
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+
+      // Send email with the form details
+      const templateParams = {
+        user_name: name,
+        user_email: email,
+        user_phone: phone,
+      };
+
+      // Send email to you without informing the user
+      emailjs.send('your_service_id', 'your_template_id', templateParams)
+        .then(function(response) {
+          console.log('Success:', response);
+          document.getElementById('successMessage').style.display = 'block';
+          document.getElementById('subscribeForm').reset(); // Clear form
+
+          // Hide overlay after 2 seconds
+          setTimeout(function() {
+            document.getElementById('overlay').classList.remove('active');
+          }, 2000);
+        }, function(error) {
+          console.log('Error:', error);
+        });
+    });
+
+    // Language Toggle Function
+    let isArabic = false;
+
+    function toggleLanguage() {
+      isArabic = !isArabic;
+      if (isArabic) {
+        document.getElementById('formTitle').innerText = "اشترك في أكاديمية أتاك لكرة القدم";
+        document.getElementById('name').setAttribute('placeholder', "الاسم الكامل");
+        document.getElementById('email').setAttribute('placeholder', "عنوان البريد الإلكتروني");
+        document.getElementById('phone').setAttribute('placeholder', "رقم الهاتف");
+        document.getElementById('submitBtn').innerText = "اشتراك";
+        document.getElementById('successMessage').innerText = "شكراً للاشتراك!";
+        document.querySelector('.lang-toggle').innerText = "English";
+      } else {
+        document.getElementById('formTitle').innerText = "Subscribe to Attack Football Academy";
+        document.getElementById('name').setAttribute('placeholder', "Full Name");
+        document.getElementById('email').setAttribute('placeholder', "Email Address");
+        document.getElementById('phone').setAttribute('placeholder', "Phone Number");
+        document.getElementById('submitBtn').innerText = "Subscribe";
+        document.getElementById('successMessage').innerText = "Thank you for subscribing!";
+        document.querySelector('.lang-toggle').innerText = "العربية";
+      }
+    }
+  </script>
+
+</body>
+</html>
