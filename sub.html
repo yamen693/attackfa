@@ -6,7 +6,6 @@
   <title>Subscribe to Attack Football Academy</title>
   <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <style>
-    /* Reset some default styles */
     body, html {
       height: 100%;
       margin: 0;
@@ -46,7 +45,6 @@
       font-size: 28px;
       color: #333;
       margin-bottom: 24px;
-      transition: color 0.3s ease;
     }
 
     input {
@@ -98,7 +96,6 @@
       border-radius: 5px;
       font-size: 16px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
 
     .lang-toggle:hover {
@@ -135,6 +132,7 @@
         <input type="text" name="name" id="name" placeholder="Full Name" required>
         <input type="email" name="email" id="email" placeholder="Email Address" required>
         <input type="tel" name="phone" id="phone" placeholder="Phone Number" required>
+        <input type="number" name="age" id="age" placeholder="Age" required>
         <button type="submit" id="submitBtn">Subscribe</button>
       </form>
       <p id="successMessage" class="success-message">Thank you for subscribing!</p>
@@ -143,60 +141,61 @@
 
   <script>
     // Initialize EmailJS
-    emailjs.init("your_user_id");  // Replace with your user ID from EmailJS
+    emailjs.init("sxlBdEa7krLiCI4dB"); // استبدلها بمفتاحك الحقيقي
 
     document.getElementById('subscribeForm').addEventListener('submit', function (e) {
       e.preventDefault();
-
-      // Show overlay while submitting
       document.getElementById('overlay').classList.add('active');
 
-      // Get form values
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
       const phone = document.getElementById('phone').value;
+      const age = document.getElementById('age').value;
 
-      // Send email with the form details
       const templateParams = {
         user_name: name,
         user_email: email,
         user_phone: phone,
+        user_age: age
       };
 
-      // Send email to you without informing the user
-      emailjs.send('your_service_id', 'your_template_id', templateParams)
-        .then(function(response) {
+      emailjs.send('service_8ms149u', 'template_5yv5wil', templateParams)
+        .then(function (response) {
           console.log('Success:', response);
           document.getElementById('successMessage').style.display = 'block';
-          document.getElementById('subscribeForm').reset(); // Clear form
+          document.getElementById('subscribeForm').reset();
 
-          // Hide overlay after 2 seconds
-          setTimeout(function() {
+          setTimeout(function () {
             document.getElementById('overlay').classList.remove('active');
           }, 2000);
-        }, function(error) {
-          console.log('Error:', error);
+        }, function (error) {
+          console.error('Email sending failed:', JSON.stringify(error));
+;
+          alert('There was a problem submitting the form. Please try again.');
+          document.getElementById('overlay').classList.remove('active');
         });
     });
 
-    // Language Toggle Function
+    // Language Toggle
     let isArabic = false;
 
     function toggleLanguage() {
       isArabic = !isArabic;
       if (isArabic) {
         document.getElementById('formTitle').innerText = "اشترك في أكاديمية أتاك لكرة القدم";
-        document.getElementById('name').setAttribute('placeholder', "الاسم الكامل");
-        document.getElementById('email').setAttribute('placeholder', "عنوان البريد الإلكتروني");
-        document.getElementById('phone').setAttribute('placeholder', "رقم الهاتف");
-        document.getElementById('submitBtn').innerText = "اشتراك";
-        document.getElementById('successMessage').innerText = "شكراً للاشتراك!";
+        document.getElementById('name').placeholder = "الاسم الكامل";
+        document.getElementById('email').placeholder = "البريد الإلكتروني";
+        document.getElementById('phone').placeholder = "رقم الهاتف";
+        document.getElementById('age').placeholder = "السن";
+        document.getElementById('submitBtn').innerText = "اشترك";
+        document.getElementById('successMessage').innerText = "شكراً لاشتراكك!";
         document.querySelector('.lang-toggle').innerText = "English";
       } else {
         document.getElementById('formTitle').innerText = "Subscribe to Attack Football Academy";
-        document.getElementById('name').setAttribute('placeholder', "Full Name");
-        document.getElementById('email').setAttribute('placeholder', "Email Address");
-        document.getElementById('phone').setAttribute('placeholder', "Phone Number");
+        document.getElementById('name').placeholder = "Full Name";
+        document.getElementById('email').placeholder = "Email Address";
+        document.getElementById('phone').placeholder = "Phone Number";
+        document.getElementById('age').placeholder = "Age";
         document.getElementById('submitBtn').innerText = "Subscribe";
         document.getElementById('successMessage').innerText = "Thank you for subscribing!";
         document.querySelector('.lang-toggle').innerText = "العربية";
