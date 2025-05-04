@@ -1,100 +1,142 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>نموذج الاشتراك في أكاديمية أتاك لكرة القدم</title>
   <style>
-    :root {
-      --main-color: #e8b546;
-      --text-color: #000;
-      --bg-color: #fff;
-    }
-
     body {
-      background-image: url('attack\ \(1\).png'); 
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      padding: 20px;
     }
-    
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: rgb(232, 181, 70,0.85);
-      z-index: -1;
-    }
-    
-
-    .content {
-      max-width: 700px;
+    .form-container {
+      max-width: 600px;
       margin: auto;
-      background-color: #ffffff;
+      background: #fff;
       padding: 30px;
       border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-
-    .content:hover {
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-      transform: translateY(-4px);
-    }
-
     h2 {
-      color: var(--main-color);
-      font-size: 1.8em;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.1em;
-      line-height: 1.6;
+      color: #e8b546;
       margin-bottom: 20px;
-      color: #444;
     }
-
-    .price {
-      font-size: 1.2em;
+    label {
+      margin-top: 15px;
+      display: block;
       font-weight: bold;
-      color: var(--main-color);
-      margin-bottom: 25px;
-      transition: color 0.3s ease;
     }
-
-    iframe {
+    input, textarea {
       width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 10px;
-      transition: box-shadow 0.3s ease;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
     }
-
-    iframe:hover {
-      box-shadow: 0 0 10px rgba(232, 181, 70, 0.3);
+    button {
+      margin-top: 20px;
+      background-color: #e8b546;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #d39b33;
+    }
+    .price-info {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .price-info p {
+      margin: 0;
+      font-size: 1.2em;
+      color: #333;
+    }
+    #success-message, #error-message {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    #success-message {
+      background-color: #28a745;
+      color: white;
+    }
+    #error-message {
+      background-color: #dc3545;
+      color: white;
     }
   </style>
 </head>
 <body>
 
-  <div class="content">
-    <h2>اشترك في أكاديمية أتاك لكرة القدم</h2>
-    
-    <p> (يرجى ملء النموذج أدناه للاشتراك. سنرسل لك التفاصيل عبر البريد أو الهاتف قريبًا.(الاشتراك لثلاثة ايام</p>
+  <div class="form-container">
+    <h2>نموذج الاشتراك في أكاديمية أتاك لكرة القدم</h2>
 
-    <div class="price">سعر الاشتراك: 800 جنيه شهريًا</div>
+    <!-- معلومات السعر -->
+    <div class="price-info">
+      <p><strong>سعر الاشتراك:</strong> 800 جنيه شهريًا</p>
+      <p><strong>العدد:</strong> 3 أيام في الأسبوع</p>
+    </div>
 
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLSeffZi64dHDpDJXow6FmckeojNzg0_VjRxlPXwqxQUb1K8VHQ/viewform?embedded=true">
-      جارٍ التحميل…
-    </iframe>
+    <!-- نموذج الاشتراك -->
+    <form id="subscription-form" action="https://formspree.io/f/xwpolgzp" method="POST">
+      <label for="name">الاسم الكامل:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone">رقم الهاتف:</label>
+      <input type="text" id="phone" name="phone" required>
+
+      <label for="age">العمر:</label>
+      <input type="number" id="age" name="age" required>
+
+      <label for="notes">ملاحظات إضافية:</label>
+      <textarea id="notes" name="notes" rows="4"></textarea>
+
+      <button type="submit">إرسال</button>
+    </form>
+
+    <!-- رسائل رد الفعل -->
+    <div id="success-message">تم إرسال النموذج بنجاح!سيتم التواصل مع حضراتكم في اسرع وقت</div>
+    <div id="error-message">حدث خطأ أثناء إرسال النموذج. حاول مرة أخرى.</div>
   </div>
+
+  <script>
+    const form = document.getElementById('subscription-form');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+      })
+      .then(response => {
+        if (response.ok) {
+          successMessage.style.display = 'block';
+          errorMessage.style.display = 'none';
+          form.reset();
+        } else {
+          errorMessage.style.display = 'block';
+          successMessage.style.display = 'none';
+        }
+      })
+      .catch(error => {
+        errorMessage.style.display = 'block';
+        successMessage.style.display = 'none';
+      });
+    });
+  </script>
 
 </body>
 </html>
