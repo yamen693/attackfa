@@ -2,14 +2,14 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Attack Football Academy Registration Form</title>
-  <link href="./attack (1).png" rel="icon" type="image/png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attack Football Academy Subscription</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #f0f0f0;
       padding: 20px;
+      transition: all 0.3s ease;
     }
     .form-container {
       max-width: 600px;
@@ -18,6 +18,7 @@
       padding: 30px;
       border-radius: 16px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      direction: ltr;
     }
     h2 {
       color: #e8b546;
@@ -29,7 +30,7 @@
       display: block;
       font-weight: bold;
     }
-    input, textarea {
+    input, textarea, select {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
@@ -77,46 +78,53 @@
       color: white;
     }
     .lang-toggle {
-      float: left;
-      margin-bottom: 15px;
-      background: #ccc;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #e8b546;
+      color: white;
       border: none;
-      padding: 5px 12px;
-      border-radius: 8px;
+      padding: 6px 12px;
+      border-radius: 6px;
       cursor: pointer;
-      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
 
-  <div class="form-container">
-    <button class="lang-toggle" onclick="toggleLanguage()">العربية</button>
-    <h2 id="form-title">Attack Football Academy Registration Form</h2>
+  <button class="lang-toggle" onclick="toggleLanguage()">العربية</button>
 
-    <div class="price-info" id="price-info">
-      <p><strong>Subscription Fee:</strong> 800 EGP/month</p>
-      <p><strong>Schedule:</strong> 3 days/week</p>
+  <div class="form-container">
+    <h2 id="form-title">Attack Football Academy Subscription</h2>
+
+    <div class="price-info">
+      <p><strong id="price-label">Subscription Price:</strong> 800 EGP / Month</p>
+      <p><strong id="days-label">Days:</strong> 3 days per week</p>
     </div>
 
-    <form id="subscription-form" action="https://formspree.io/f/xwpolgzp" method="POST">
+    <form id="subscription-form">
       <label for="name" id="label-name">Full Name:</label>
       <input type="text" id="name" name="name" required>
 
       <label for="phone" id="label-phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" pattern="[0-9]{10,15}" required title="Enter a valid phone number (10–15 digits)">
+      <input type="text" id="phone" name="phone" required>
 
       <label for="age" id="label-age">Age:</label>
-      <input type="number" id="age" name="age" min="4" max="25" required>
+      <input type="number" id="age" name="age" required>
 
-      <label for="notes" id="label-notes">Additional Notes:</label>
-      <textarea id="notes" name="notes" rows="4"></textarea>
 
-      <button type="submit" id="submit-button">Submit</button>
+      <label for="payment-method" id="label-payment">Payment Method:</label>
+      <select id="payment-method" required>
+        <option value="">-- Select --</option>
+        <option value="cash">Cash</option>
+        <option value="visa">Visa</option>
+      </select>
+
+      <button type="submit" id="submit-btn">Submit</button>
     </form>
 
-    <div id="success-message">✅ Form submitted successfully! We will contact you soon.</div>
-    <div id="error-message">❌ An error occurred while submitting the form. Please try again.</div>
+    <div id="success-message">Form submitted successfully! We’ll contact you shortly.</div>
+    <div id="error-message">Error occurred. Please try again.</div>
   </div>
 
   <script>
@@ -127,60 +135,68 @@
     form.addEventListener('submit', function (event) {
       event.preventDefault();
 
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      })
-      .then(response => {
-        if (response.ok) {
-          successMessage.style.display = 'block';
-          errorMessage.style.display = 'none';
-          form.reset();
-        } else {
-          throw new Error();
-        }
-      })
-      .catch(() => {
-        errorMessage.style.display = 'block';
-        successMessage.style.display = 'none';
-      });
+      const paymentMethod = document.getElementById('payment-method').value;
+
+      // Simulate form submission
+      successMessage.style.display = 'block';
+      errorMessage.style.display = 'none';
+
+      // Go to Visa payment if selected
+      if (paymentMethod === 'visa') {
+        setTimeout(() => {
+          window.location.href = 'https://paymob.xyz/vvc3kcaB/';
+        }, 1500);
+      }
+
+      form.reset();
     });
 
-    // زر الترجمة
-    let isArabic = false;
+    // Translation logic
+    let currentLang = 'en';
+
+    const translations = {
+      ar: {
+        'form-title': 'نموذج الاشتراك في أكاديمية أتاك لكرة القدم',
+        'price-label': 'سعر الاشتراك:',
+        'days-label': 'عدد الأيام:',
+        'label-name': 'الاسم الكامل:',
+        'label-phone': 'رقم الهاتف:',
+        'label-age': 'العمر:',
+        
+        'label-payment': 'طريقة الدفع:',
+        'submit-btn': 'إرسال',
+        'lang-toggle': 'English',
+        'success-message': 'تم إرسال النموذج بنجاح! سيتم التواصل معكم قريبًا.',
+        'error-message': 'حدث خطأ أثناء الإرسال. حاول مرة أخرى.'
+      },
+      en: {
+        'form-title': 'Attack Football Academy Subscription',
+        'price-label': 'Subscription Price:',
+        'days-label': 'Days:',
+        'label-name': 'Full Name:',
+        'label-phone': 'Phone Number:',
+        'label-age': 'Age:',
+       
+        'label-payment': 'Payment Method:',
+        'submit-btn': 'Submit',
+        'lang-toggle': 'العربية',
+        'success-message': 'Form submitted successfully! We’ll contact you shortly.',
+        'error-message': 'Error occurred. Please try again.'
+      }
+    };
+
     function toggleLanguage() {
-      isArabic = !isArabic;
-      document.documentElement.lang = isArabic ? 'ar' : 'en';
-      document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
 
-      document.title = isArabic 
-        ? 'نموذج الاشتراك في أكاديمية أتاك لكرة القدم'
-        : 'Attack Football Academy Registration Form';
+      document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
 
-      document.getElementById('form-title').innerText = isArabic
-        ? 'نموذج الاشتراك في أكاديمية أتاك لكرة القدم'
-        : 'Attack Football Academy Registration Form';
+      for (let key in translations[currentLang]) {
+        const el = document.getElementById(key);
+        if (el) el.textContent = translations[currentLang][key];
+      }
 
-      document.getElementById('label-name').innerText = isArabic ? 'الاسم الكامل:' : 'Full Name:';
-      document.getElementById('label-phone').innerText = isArabic ? 'رقم الهاتف:' : 'Phone Number:';
-      document.getElementById('label-age').innerText = isArabic ? 'العمر:' : 'Age:';
-      document.getElementById('label-notes').innerText = isArabic ? 'ملاحظات إضافية:' : 'Additional Notes:';
-      document.getElementById('submit-button').innerText = isArabic ? 'إرسال' : 'Submit';
-
-      document.getElementById('price-info').innerHTML = isArabic
-        ? `<p><strong>سعر الاشتراك:</strong> 800 جنيه شهريًا</p><p><strong>العدد:</strong> 3 أيام في الأسبوع</p>`
-        : `<p><strong>Subscription Fee:</strong> 800 EGP/month</p><p><strong>Schedule:</strong> 3 days/week</p>`;
-
-      successMessage.innerText = isArabic 
-        ? '✅ تم إرسال النموذج بنجاح! سيتم التواصل معكم قريبًا.'
-        : '✅ Form submitted successfully! We will contact you soon.';
-
-      errorMessage.innerText = isArabic 
-        ? '❌ حدث خطأ أثناء الإرسال. حاول مرة أخرى.'
-        : '❌ An error occurred while submitting the form. Please try again.';
-
-      document.querySelector('.lang-toggle').innerText = isArabic ? 'English' : 'العربية';
+      const toggleBtn = document.querySelector('.lang-toggle');
+      toggleBtn.textContent = translations[currentLang === 'en' ? 'ar' : 'en']['lang-toggle'];
     }
   </script>
 
