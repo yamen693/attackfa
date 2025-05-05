@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>نموذج الاشتراك في أكاديمية أتاك لكرة القدم</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Attack Football Academy Registration Form</title>
+  <link href="./attack (1).png" rel="icon" type="image/png"/>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -21,6 +22,7 @@
     h2 {
       color: #e8b546;
       margin-bottom: 20px;
+      text-align: center;
     }
     label {
       margin-top: 15px;
@@ -74,39 +76,47 @@
       background-color: #dc3545;
       color: white;
     }
+    .lang-toggle {
+      float: left;
+      margin-bottom: 15px;
+      background: #ccc;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
 
   <div class="form-container">
-    <h2>نموذج الاشتراك في أكاديمية أتاك لكرة القدم</h2>
+    <button class="lang-toggle" onclick="toggleLanguage()">العربية</button>
+    <h2 id="form-title">Attack Football Academy Registration Form</h2>
 
-    <!-- معلومات السعر -->
-    <div class="price-info">
-      <p><strong>سعر الاشتراك:</strong> 800 جنيه شهريًا</p>
-      <p><strong>العدد:</strong> 3 أيام في الأسبوع</p>
+    <div class="price-info" id="price-info">
+      <p><strong>Subscription Fee:</strong> 800 EGP/month</p>
+      <p><strong>Schedule:</strong> 3 days/week</p>
     </div>
 
-    <!-- نموذج الاشتراك -->
     <form id="subscription-form" action="https://formspree.io/f/xwpolgzp" method="POST">
-      <label for="name">الاسم الكامل:</label>
+      <label for="name" id="label-name">Full Name:</label>
       <input type="text" id="name" name="name" required>
 
-      <label for="phone">رقم الهاتف:</label>
-      <input type="text" id="phone" name="phone" required>
+      <label for="phone" id="label-phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10,15}" required title="Enter a valid phone number (10–15 digits)">
 
-      <label for="age">العمر:</label>
-      <input type="number" id="age" name="age" required>
+      <label for="age" id="label-age">Age:</label>
+      <input type="number" id="age" name="age" min="4" max="25" required>
 
-      <label for="notes">ملاحظات إضافية:</label>
+      <label for="notes" id="label-notes">Additional Notes:</label>
       <textarea id="notes" name="notes" rows="4"></textarea>
 
-      <button type="submit">إرسال</button>
+      <button type="submit" id="submit-button">Submit</button>
     </form>
 
-    <!-- رسائل رد الفعل -->
-    <div id="success-message">تم إرسال النموذج بنجاح!سيتم التواصل مع حضراتكم في اسرع وقت</div>
-    <div id="error-message">حدث خطأ أثناء إرسال النموذج. حاول مرة أخرى.</div>
+    <div id="success-message">✅ Form submitted successfully! We will contact you soon.</div>
+    <div id="error-message">❌ An error occurred while submitting the form. Please try again.</div>
   </div>
 
   <script>
@@ -120,6 +130,7 @@
       fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
       })
       .then(response => {
         if (response.ok) {
@@ -127,15 +138,50 @@
           errorMessage.style.display = 'none';
           form.reset();
         } else {
-          errorMessage.style.display = 'block';
-          successMessage.style.display = 'none';
+          throw new Error();
         }
       })
-      .catch(error => {
+      .catch(() => {
         errorMessage.style.display = 'block';
         successMessage.style.display = 'none';
       });
     });
+
+    // زر الترجمة
+    let isArabic = false;
+    function toggleLanguage() {
+      isArabic = !isArabic;
+      document.documentElement.lang = isArabic ? 'ar' : 'en';
+      document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+
+      document.title = isArabic 
+        ? 'نموذج الاشتراك في أكاديمية أتاك لكرة القدم'
+        : 'Attack Football Academy Registration Form';
+
+      document.getElementById('form-title').innerText = isArabic
+        ? 'نموذج الاشتراك في أكاديمية أتاك لكرة القدم'
+        : 'Attack Football Academy Registration Form';
+
+      document.getElementById('label-name').innerText = isArabic ? 'الاسم الكامل:' : 'Full Name:';
+      document.getElementById('label-phone').innerText = isArabic ? 'رقم الهاتف:' : 'Phone Number:';
+      document.getElementById('label-age').innerText = isArabic ? 'العمر:' : 'Age:';
+      document.getElementById('label-notes').innerText = isArabic ? 'ملاحظات إضافية:' : 'Additional Notes:';
+      document.getElementById('submit-button').innerText = isArabic ? 'إرسال' : 'Submit';
+
+      document.getElementById('price-info').innerHTML = isArabic
+        ? `<p><strong>سعر الاشتراك:</strong> 800 جنيه شهريًا</p><p><strong>العدد:</strong> 3 أيام في الأسبوع</p>`
+        : `<p><strong>Subscription Fee:</strong> 800 EGP/month</p><p><strong>Schedule:</strong> 3 days/week</p>`;
+
+      successMessage.innerText = isArabic 
+        ? '✅ تم إرسال النموذج بنجاح! سيتم التواصل معكم قريبًا.'
+        : '✅ Form submitted successfully! We will contact you soon.';
+
+      errorMessage.innerText = isArabic 
+        ? '❌ حدث خطأ أثناء الإرسال. حاول مرة أخرى.'
+        : '❌ An error occurred while submitting the form. Please try again.';
+
+      document.querySelector('.lang-toggle').innerText = isArabic ? 'English' : 'العربية';
+    }
   </script>
 
 </body>
