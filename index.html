@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="auto">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -280,8 +280,10 @@ nav.scrolled {
                 <div class="md:flex md:space-x-4 hidden" id="desktop-menu">
                     <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 space-x-6">
                         <li class="mr-4">
+                          <li><a href="./index.html"  class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center"
+                            data-section="home" >Home</a></li>
                             <li><a href="#about"  class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center"
-                                data-section="about" >About</a></li>
+                                data-section="about" >About us</a></li>
                             <li><a href="#vision"  class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center"
                                 data-section="vision">Vision</a></li>
                             <li><a href="#mission"  class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center"
@@ -292,9 +294,9 @@ nav.scrolled {
                         <!-- <li   class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" >
                             <a  href="./reels.html">Reels</a>
                         </li> -->
-                        <li   class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" >
+                        <!-- <li   class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" >
                           <a  href="sub.html">subscribe now!</a>
-                      </li>
+                      </li> -->
                         <li   class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center">
                             <a  href="https://yamen693.github.io/attack-final/">Contact</a>
                         </li>
@@ -345,9 +347,9 @@ nav.scrolled {
                 <!-- <li class="mr-4">
                     <a   class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" href="./reels.html">Reels</a>
                 </li> -->
-                <li class="mr-4">
-                  <a   class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" href="./sub.html">subscribe now!</a>
-              </li>
+                <!-- <li class="mr-4">
+                  <a   class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" href="./sub.html">subscribe </a>
+              </li> -->
                 <li>
                     <a   class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" href="https://yamen693.github.io/attack-final/">Contact</a>
                 </li>
@@ -437,6 +439,15 @@ nav.scrolled {
                     <h3 class="card-title" style="font-weight: bold;" >The mental and psychological aspect</h3>
                     <br>
                     <p>The training programs also aim to enhance the mental and psychological capabilities of players, through guidance sessions that help them deal with psychological pressure, increase concentration, and stimulate sportsmanship.<p>
+                   
+                </div>
+
+                  <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <img alt="Advanced football players in action" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_8984-Enhanced-NR.jpg" width="384"/>
+                    <h3 class="card-title" style="font-weight: bold;" >The tactical aspect</h3>
+                    <br>
+                    <p>We don't just teach skills; we focus on developing players' understanding of playing styles, proper positioning, transitions, and the construction of organized attacks and defenses.
+In modern football, skill alone is not enough. An intelligent player is one who understands when to move, where to position himself, and how to behave under pressure.<p>
                    
                 </div>
             </div>
@@ -553,7 +564,7 @@ nav.scrolled {
             <div class="flex flex-wrap justify-center items-center gap-6">
               <img src="body.png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" />
               <img src="Untitled copy.png" alt="Partner 2" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" />
-              <img src="./no bg nfchild.png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" />
+              <!-- <img src="./no bg nfchild.png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" /> -->
               <img src="WhatsApp-Image-2024-10-04-at-15.png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" />
               
             </div>
@@ -658,6 +669,16 @@ mobileBtn.addEventListener('click', () => {
     document.getElementById("playerAd").classList.add("hidden");
   }
 
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  document.addEventListener('keydown', function(e) {
+    if (
+      e.key === "F12" || 
+      (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "C" || e.key === "J")) ||
+      (e.ctrlKey && e.key === "U")
+    ) {
+      e.preventDefault();
+    }
+  });
 
 
     </script>
