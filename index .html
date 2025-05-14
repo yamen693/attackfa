@@ -536,44 +536,76 @@ nav.scrolled {
     <!-- Player Photo -->
     <img src="youssef nihad.jpeg" alt="Player of the Month" class="w-full h-17 object-cover" >
   </div>
- 
+     
     <footer class="bg-[rgb(232,181,70)] text-black py-6 px-4">
-       <!-- Founders Carousel (Desktop Only) -->
-<div class="block relative mt-10 mt-10 overflow-hidden h-[500px] w-full bg-white border-t border-black bg-[rgb(232,181,70)]">
-  <div class="mx-auto w-[320px] h-full overflow-hidden relative  bg-[rgb(232,181,70)]">
+   <!-- Founders Carousel -->
+  <div class="relative mt-10 overflow-hidden w-full border-t border-black bg-[rgb(232,181,70)]">
     
-    <!-- Scrollable Founders -->
-    <div id="foundersContainer" class="overflow-hidden h-full scroll-smooth transition-all duration-300">
-      <!-- Wrapper for scroll -->
-      <div class="flex flex-col space-y-6  bg-[rgb(232,181,70)]">
-        
-        <!-- Founder 1 -->
-        <div class="w-full h-[480px] flex-shrink-0 flex flex-col justify-center items-center bg-white text-black border border-black rounded-xl p-4 bg-[rgb(232,181,70)]">
-          <img src="cropped_image.png" alt="Founder 1" class="w-24 h-24 rounded-full mb-2 object-cover" />
-          <h3 class="text-2xl font-bold">shawky adel</h3>
-          <p class="text-base text-center mr-5 ml-5">
-We founded this academy to provide the highest quality professional training, with a comprehensive program to develop technical, physical, and mental skills. We are committed to developing outstanding players and aspire to reach the highest levels of player development and marketing.</p>
+    <!-- Desktop View: Vertical Scroll + Buttons -->
+    <div class="hidden md:block mx-auto w-[320px] h-[500px] relative">
+      <div id="foundersContainer" class="overflow-hidden h-full scroll-smooth transition-all duration-300">
+        <div class="flex flex-col space-y-6">
+          <!-- Founder 1 -->
+          <div class="w-full h-[480px] flex-shrink-0 flex flex-col justify-center items-center border border-black rounded-xl p-4 bg-[rgb(232,181,70)] text-black">
+            <img src="cropped_image.png" alt="Founder 1" class="w-24 h-24 md:w-20 md:h-20 rounded-full mb-2 object-cover" />
+            <h3 class="text-2xl md:text-xl font-bold">shawky adel</h3>
+            <p class="text-base md:text-sm text-center mx-4 text-base text-center mr-5 ml-5" style="margin-right: 5px;">
+           We founded this academy to provide the highest quality professional training, with a comprehensive program to develop technical, physical, and mental skills. We are committed to developing outstanding players and aspire to reach the highest levels of player development and marketing.
+            </p>
+          </div>
+          <!-- Founder 2 -->
+          <div class="w-full h-[480px] flex-shrink-0 flex flex-col justify-center items-center border border-black rounded-xl p-4 bg-[rgb(232,181,70)] text-black">
+            <img src="roushdy.png" alt="Founder 2" class="w-24 h-24 md:w-20 md:h-20 rounded-full mb-2 object-cover" />
+            <h3 class="text-2xl md:text-xl font-bold">roushdy</h3>
+            <p class="text-base md:text-sm text-center text-base text-center mr-5 ml-5" style="margin-right: 5px;">
+             The administration aims to provide an organized and safe environment that promotes discipline, development, and effective communication, with a focus on discovering and developing talent. It also promotes ongoing communication with parents and provides monthly reports to monitor player performance, ensuring the best possible outcomes for all parties involved
+            </p>
+          </div>
         </div>
-
-        <!-- Founder 2 -->
-        <div class="w-full h-[480px] flex-shrink-0 flex flex-col justify-center items-center bg-white text-black border border-black rounded-xl p-4  bg-[rgb(232,181,70)]">
-          <img src="roushdy.png" alt="Founder 2" class="w-24 h-24 rounded-full mb-2 object-cover" />
-          <h3 class="text-2xl font-bold">roushdy</h3>
-          <p class="text-base text-center mr-5 ml-5">The administration aims to provide an organized and safe environment that promotes discipline, development, and effective communication, with a focus on discovering and developing talent. It also promotes ongoing communication with parents and provides monthly reports to monitor player performance, ensuring the best possible outcomes for all parties involved.</p>
-        </div>
-
-        <!-- Add more founders if needed -->
-
       </div>
+      <!-- Scroll Button (Down) -->
+      <button onclick="scrollNextFounder()" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white w-6 h-24 rounded-l-lg flex items-center justify-center hover:bg-[rgb(232,181,70)] hover:text-black transition-colors duration-300">
+        <i class="fas fa-chevron-down transform rotate-90"></i>
+      </button>
     </div>
 
-    <!-- Vertical Rectangle with Arrow Button -->
-    <button onclick="scrollNextFounder()" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white w-10 h-24 rounded-l-lg flex items-center justify-center hover:bg-[rgb(232,181,70)] hover:text-black transition-colors duration-300">
-      <i class="fas fa-chevron-down transform rotate-90"></i>
-    </button>
+  <!-- Mobile View: Snap Scrolling Carousel -->
+<div class="block md:hidden w-full relative">
+  <div id="mobileFounders" class="flex overflow-x-auto snap-x snap-mandatory space-x-4 px-4 w-full no-scrollbar scroll-smooth">
+    <!-- Founder 1 -->
+    <div class="snap-center flex-shrink-0 w-full max-w-xs mx-auto border border-black rounded-xl p-4 bg-[rgb(232,181,70)] text-black pb-lg-5">
+      <img src="cropped_image.png" alt="Founder 1" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-2 object-cover mx-auto" />
+      <h3 class="text-lg sm:text-xl font-bold text-center">shawky adel</h3>
+      <p class="text-sm text-center px-2 m-lg-auto">أسستُ هذه الأكاديمية لتوفير تدريب احترافي عالي الجودة، مع برنامج شامل لتطوير المهارات الفنية والبدنية والذهنية. نحن ملتزمون بتطوير لاعبين متميزين، ونطمح للوصول إلى أعلى مستويات التطوير والتسويق.</p>
+    </div>
 
+    <!-- Founder 2 -->
+    <div class="snap-center flex-shrink-0 w-full max-w-xs mx-auto border border-black rounded-xl p-4 bg-[rgb(232,181,70)] text-black">
+      <img src="roushdy.png" alt="Founder 2" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-2 object-cover mx-auto" />
+      <h3 class="text-lg sm:text-xl font-bold text-center">roushdy</h3>
+      <p class="text-sm text-center mt-2  px-2 m-lg-auto ">تهدف الإدارة إلى توفير بيئة منظمة وآمنة تُعزز الانضباط والتطوير والتواصل الفعال، مع التركيز على اكتشاف المواهب وتطويرها. كما تُعزز التواصل المستمر مع أولياء الأمور، وتُقدم تقارير شهرية لمتابعة أداء اللاعبين، بما يضمن أفضل النتائج لجميع الأطراف المعنية.
+</p>
+    </div>
+  </div>
+
+  <!-- Pagination Dots -->
+  <div class="flex justify-center space-x-2 mt-4" id="dots">
+    <span class="dot w-3 h-3 bg-black rounded-full inline-block transition-all duration-300"></span>
+    <span class="dot w-3 h-3 bg-gray-400 rounded-full inline-block transition-all duration-300"></span>
   </div>
 </div>
+  </div>
+  
+<!-- CSS to Hide Scrollbar -->
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
           
           <!-- Left: Texts -->
           <div class="text-center md:text-center">
@@ -614,7 +646,9 @@ We founded this academy to provide the highest quality professional training, wi
         >
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.9095633585316!2d31.43691627559366!3d30.010753074940606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583cd1fe5110ad%3A0x5d78f365cfac5f22!2sEl%20Ghad%20El%20Moshreq%20Language%20Institute!5e0!3m2!1sen!2seg!4v1744724278276!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       </footer>
-    <script>
+         
+          
+       <script>
         document.addEventListener('DOMContentLoaded', function () {
             // LANGUAGE MENU TOGGLE
             const languageButton = document.getElementById('language-button');
@@ -749,6 +783,33 @@ mobileBtn.addEventListener('click', () => {
       }, 400);
     }
   }
+
+  function scrollNextFounder() {
+    const container = document.getElementById('foundersContainer');
+    const childHeight = container.firstElementChild.offsetHeight + 24;
+    container.scrollBy({ top: childHeight, behavior: 'smooth' });
+
+    if (container.scrollTop + container.clientHeight >= container.scrollHeight) {
+      setTimeout(() => {
+        container.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 400);
+    }
+  }
+   const carousel = document.getElementById('mobileFounders');
+  const dots = document.querySelectorAll('#dots .dot');
+
+  carousel.addEventListener('scroll', () => {
+    const scrollLeft = carousel.scrollLeft;
+    const totalWidth = carousel.scrollWidth;
+    const viewWidth = carousel.clientWidth;
+    const cardIndex = Math.round(scrollLeft / viewWidth);
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('bg-black', i === cardIndex);
+      dot.classList.toggle('bg-gray-400', i !== cardIndex);
+    });
+  });
+  
     </script>
     <script src="./index.js"></script>
 </body>
