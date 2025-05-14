@@ -12,6 +12,18 @@
     <script src="https://kit.fontawesome.com/843a6e712c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        .reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition-delay: 1s;
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
         .circle-bg {
     display: inline-flex;
     align-items: center;
@@ -392,7 +404,7 @@ nav.scrolled {
             </p>
         </div>
     </section>
-    <section class="py-12 bg-white transition-all duration-300 ease-in-out" id="vision">
+    <sectionclass="py-12 bg-white reveal" id="vision">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">Vision</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -423,7 +435,7 @@ Our goal is to develop players' skills from the basics to the highest levels of 
             </div>
         </div>
     </section>
-    <section class="py-12 bg-white transition-all duration-300 ease-in-out" id="mission">
+    <section class="py-12 bg-white reveal" id="mission">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">Mission</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -442,9 +454,9 @@ Our goal is to develop players' skills from the basics to the highest levels of 
             </div>
         </div>
     </section>
-    <section class="py-12 bg-white transition-all duration-300 ease-in-out" id="programs">
+    <section class="py-12 bg-white reveal" id="programs">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">Our Programs</h2>
+            <h2>Our Programs</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img alt="Young football players practicing basic skills" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="Screenshot 2025-05-14 090600.png" width="384"/>
@@ -586,7 +598,7 @@ In modern football, skill alone is not enough. An intelligent player is one who 
       </footer>
          
           
-      <script>
+       <script>
         document.addEventListener('DOMContentLoaded', function () {
             // LANGUAGE MENU TOGGLE
             const languageButton = document.getElementById('language-button');
@@ -663,23 +675,22 @@ In modern football, skill alone is not enough. An intelligent player is one who 
 const mobileMenu = document.getElementById('mobile-menu');
 
 mobileBtn.addEventListener('click', () => {
-  // toggle the scaleY for a “slide down” effect
-  mobileMenu.classList.toggle('scale-y-100');
-  mobileMenu.classList.toggle('scale-y-0');
-});
-
-
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      document.getElementById("playerAd").classList.remove("hidden");
-    }, 5000); // Show after 5 seconds
+    // toggle the scaleY for a “slide down” effect
+    mobileMenu.classList.toggle('scale-y-100');
+    mobileMenu.classList.toggle('scale-y-0');
   });
-
-  function hideAd() {
-    document.getElementById("playerAd").classList.add("hidden");
-  }
-
-  document.addEventListener('contextmenu', event => event.preventDefault());
+  
+  
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("playerAd").classList.remove("hidden");
+      }, 5000); // Show after 5 seconds
+    });
+  
+    function hideAd() {
+      document.getElementById("playerAd").classList.add("hidden");
+    }
+    document.addEventListener('contextmenu', event => event.preventDefault());
   document.addEventListener('keydown', function(e) {
     if (
       e.key === "F12" || 
@@ -690,7 +701,46 @@ mobileBtn.addEventListener('click', () => {
     }
   });
 
+  const revealElements = document.querySelectorAll('.reveal');
 
+  const revealOnScroll = () => {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    revealElements.forEach(el => {
+      const boxTop = el.getBoundingClientRect().top;
+      const boxBottom = el.getBoundingClientRect().bottom;
+
+      if (boxTop < triggerBottom && boxBottom > 0) {
+        el.classList.add('visible');
+      } else {
+        el.classList.remove('visible');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', revealOnScroll);
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show-section");
+            observer.unobserve(entry.target); // Stop observing once shown
+          }
+        });
+      },
+      {
+        threshold: 0.1
+      }
+    );
+
+    document.querySelectorAll(".hidden-section").forEach(section => {
+      observer.observe(section);
+    });
+  });
+  
     </script>
     <script src="./index.js"></script>
 </body>
