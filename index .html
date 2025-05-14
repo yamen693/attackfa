@@ -506,33 +506,7 @@ nav.scrolled {
             </div>
         </div>
     </section>
-     <section class="py-12 px-4 sm:px-8 bg-gradient-to-r from-white to-[rgb(232,181,70)] transition-all duration-300 ease-in-out" id="maggie-section">
-        <div class="container mx-auto flex flex-col md:flex-row-reverse items-center md:items-start md:space-x-12 md:space-x-reverse">
-        
-          <!-- الصور -->
-          <div class="flex flex-row items-center justify-center space-x-6 space-x-reverse mb-6 md:mb-0 md:space-x-12 md:space-x-reverse">
-            
-            <!-- صورة المالك -->
-            <img alt="صورة شوقي عادل"  class="w-32 h-32 md:w-48 md:h-48 rounded-full hover:scale-105 transition-transform duration-300 ease-in-out ring-2 ring-yellow-400" src="./cropped_image.png">
-      
-            <!-- صورة الشريك -->
-            <img 
-              alt="صورة شريك الأكاديمية" 
-              class="w-32 h-32 md:w-48 md:h-48 rounded-full hover:scale-105 transition-transform duration-300 ease-in-out ring-2 ring-yellow-400 rotate-3" 
-              src="roushdy.png" 
-            >
-          </div>
-      
-          <!-- النص -->
-          <div class="text-center md:text-right md:max-w-xl" dir="rtl" style="color: #000;">
-            <h3 class="text-2xl font-bold mb-4">ملاك الأكاديمية</h3>
-            <p class="text-lg leading-relaxed">
-              أسسنا هذه الأكاديمية لتقديم تدريب احترافي بأعلى جودة، مع برنامج متكامل لتطوير المهارات الفنية والبدنية والذهنية. نلتزم بصناعة لاعبين مميزين، ونطمح للوصول إلى أعلى المستويات في تطوير وتسويق اللاعبين.
-            </p>
-          </div>
 
-        </div>
-      </section>
 
 <div class="contact-fab" onclick="toggleSocialMedia()">
   <i class="fa-solid fa-comments"></i>
@@ -562,14 +536,47 @@ nav.scrolled {
     <!-- Player Photo -->
     <img src="youssef nihad.jpeg" alt="Player of the Month" class="w-full h-17 object-cover" >
   </div>
-  
-      
-      
+ 
     <footer class="bg-[rgb(232,181,70)] text-black py-6 px-4">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start space-y-6 md:space-y-0">
+       <!-- Founders Carousel (Desktop Only) -->
+<div class="block relative mt-10 mt-10 overflow-hidden h-[500px] w-full bg-white border-t border-black bg-[rgb(232,181,70)]">
+  <div class="mx-auto w-[320px] h-full overflow-hidden relative  bg-[rgb(232,181,70)]">
+    
+    <!-- Scrollable Founders -->
+    <div id="foundersContainer" class="overflow-hidden h-full scroll-smooth transition-all duration-300">
+      <!-- Wrapper for scroll -->
+      <div class="flex flex-col space-y-6  bg-[rgb(232,181,70)]">
+        
+        <!-- Founder 1 -->
+        <div class="w-full h-[480px] flex-shrink-0 flex flex-col justify-center items-center bg-white text-black border border-black rounded-xl p-4 bg-[rgb(232,181,70)]">
+          <img src="cropped_image.png" alt="Founder 1" class="w-24 h-24 rounded-full mb-2 object-cover" />
+          <h3 class="text-2xl font-bold">shawky adel</h3>
+          <p class="text-base text-center mr-5 ml-5">
+We founded this academy to provide the highest quality professional training, with a comprehensive program to develop technical, physical, and mental skills. We are committed to developing outstanding players and aspire to reach the highest levels of player development and marketing.</p>
+        </div>
+
+        <!-- Founder 2 -->
+        <div class="w-full h-[480px] flex-shrink-0 flex flex-col justify-center items-center bg-white text-black border border-black rounded-xl p-4  bg-[rgb(232,181,70)]">
+          <img src="roushdy.png" alt="Founder 2" class="w-24 h-24 rounded-full mb-2 object-cover" />
+          <h3 class="text-2xl font-bold">roushdy</h3>
+          <p class="text-base text-center mr-5 ml-5">The administration aims to provide an organized and safe environment that promotes discipline, development, and effective communication, with a focus on discovering and developing talent. It also promotes ongoing communication with parents and provides monthly reports to monitor player performance, ensuring the best possible outcomes for all parties involved.</p>
+        </div>
+
+        <!-- Add more founders if needed -->
+
+      </div>
+    </div>
+
+    <!-- Vertical Rectangle with Arrow Button -->
+    <button onclick="scrollNextFounder()" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white w-10 h-24 rounded-l-lg flex items-center justify-center hover:bg-[rgb(232,181,70)] hover:text-black transition-colors duration-300">
+      <i class="fas fa-chevron-down transform rotate-90"></i>
+    </button>
+
+  </div>
+</div>
           
           <!-- Left: Texts -->
-          <div class="text-center md:text-left">
+          <div class="text-center md:text-center">
             <p>© 2024 Attack Academy. All rights reserved.</p>
             <p class="mt-2">
               Coaches: To apply for a job click 
@@ -579,7 +586,7 @@ nav.scrolled {
             </p>
       
             <!-- Social Icons -->
-            <div class="flex justify-center md:justify-start space-x-4 mt-4">
+            <div class="flex justify-center md:justify-start space-x-4 mt-4 md:text-center" >
               <a href="https://www.facebook.com/share/15kEBiVWmL/" target="_blank" class="bg-black text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-[rgb(232,181,70)] hover:text-black transition-colors duration-300">
                 <i class="fab fa-facebook-f"></i>
               </a>
@@ -595,10 +602,11 @@ nav.scrolled {
           <div class="mt-10 text-center">
             <h2 class="text-xl md:text-2xl font-bold text-black mb-4">Our Partners:</h2>
             <div class="flex flex-wrap justify-center items-center gap-6">
-              <img src="body.png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" >
-              <img src="Untitled copy.png" alt="Partner 2" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" >
-              <!-- <img src="./no bg nfchild.png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" > -->
-              <img src="WhatsApp-Image-2024-10-04-at-15.png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" >
+              <img src="body.png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" />
+              <img src="Untitled copy.png" alt="Partner 2" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" />
+              <!-- <img src="./no bg nfchild.png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" /> -->
+              <img src="WhatsApp-Image-2024-10-04-at-15.png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" />
+              
             </div>
           </div>
         </div>
@@ -606,7 +614,7 @@ nav.scrolled {
         >
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.9095633585316!2d31.43691627559366!3d30.010753074940606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583cd1fe5110ad%3A0x5d78f365cfac5f22!2sEl%20Ghad%20El%20Moshreq%20Language%20Institute!5e0!3m2!1sen!2seg!4v1744724278276!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       </footer>
-      <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
             // LANGUAGE MENU TOGGLE
             const languageButton = document.getElementById('language-button');
@@ -728,27 +736,19 @@ mobileBtn.addEventListener('click', () => {
 
   window.addEventListener('scroll', revealOnScroll);
 
+<!--  -->
+    function scrollNextFounder() {
+    const container = document.getElementById('foundersContainer');
+    const childHeight = container.firstElementChild.offsetHeight + 24; // with margin
+    container.scrollBy({ top: childHeight, behavior: 'smooth' });
 
-    document.addEventListener("DOMContentLoaded", () => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show-section");
-            observer.unobserve(entry.target); // Stop observing once shown
-          }
-        });
-      },
-      {
-        threshold: 0.1
-      }
-    );
-
-    document.querySelectorAll(".hidden-section").forEach(section => {
-      observer.observe(section);
-    });
-  });
-  
+    // Optional loop back to first
+    if (container.scrollTop + container.clientHeight >= container.scrollHeight) {
+      setTimeout(() => {
+        container.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 400);
+    }
+  }
     </script>
     <script src="./index.js"></script>
 </body>
