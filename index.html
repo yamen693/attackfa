@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Attack Football Academy</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="./attack (1).png" rel="icon" type="image/png"/>
+    <link href="./attack (1).png" rel="icon" type="image/png">
     <script src="https://kit.fontawesome.com/843a6e712c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-
-   
-  
     <style>
+        .circle-bg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(232, 181, 70);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+
+  .circle-bg:hover {
+    transform: scale(1.1);
+  }
+
+  .circle-bg i {
+    font-size: 20px;
+  }
+
+  .social-media ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+  }
       .map-container {
         width: 100%;
         height: 400px;
@@ -489,42 +511,25 @@ In modern football, skill alone is not enough. An intelligent player is one who 
       
         </div>
       </section>
-      <div class="contact-fab" onclick="toggleSocialMedia()">
-        <i class="fa-solid fa-comments"></i> <!-- You can change this icon -->
-      </div>
-      
-      <div hidden class="social-media" id="social-media">
-        <ul>
-          <li>
-            <a href="tel:01128043787">
-              <i class="fa-solid fa-phone" style="color: #64ef61;"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://wa.me/01128043787">
-              <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="contact-fab" onclick="toggleSocialMedia()">
-        <i class="fa-solid fa-comments"></i>
-      </div>
-      
-      <div hidden class="social-media" id="social-media">
-        <ul>
-          <li>
-            <a href="tel:01128043787">
-              <i class="fa-solid fa-phone" style="color: #64ef61;"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://wa.me/01128043787">
-              <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+     <div class="contact-fab" onclick="toggleSocialMedia()">
+  <i class="fa-solid fa-comments"></i>
+</div>
+
+<div hidden class="social-media" id="social-media">
+  <ul>
+    <li>
+      <a href="tel:01128043787" class="circle-bg">
+        <i class="fa-solid fa-phone" style="color: #64ef61;"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://wa.me/01128043787" class="circle-bg">
+        <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
       
 <!-- Player of the Month Ad -->
 <div id="playerAd" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 z-50 hidden rounded-xl shadow-lg border border-white bg-white overflow-hidden">
