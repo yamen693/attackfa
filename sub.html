@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
@@ -116,7 +116,7 @@
       <label for="payment-method" id="label-payment">Payment Method:</label>
       <select id="payment-method" required>
         <option value="">-- Select --</option>
-        <option value="cash">Cash</option>
+        <option value="cash">Cash (when you arrive to the academy)</option>
         <option value="visa">Visa</option>
       </select>
 
@@ -126,34 +126,58 @@
     <div id="success-message">Form submitted successfully! We’ll contact you shortly.</div>
     <div id="error-message">Error occurred. Please try again.</div>
   </div>
-
   <script>
     const form = document.getElementById('subscription-form');
     const successMessage = document.getElementById('success-message');
     const errorMessage = document.getElementById('error-message');
-
+  
     form.addEventListener('submit', function (event) {
       event.preventDefault();
-
+  
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const age = document.getElementById('age').value;
       const paymentMethod = document.getElementById('payment-method').value;
-
-      // Simulate form submission
-      successMessage.style.display = 'block';
-      errorMessage.style.display = 'none';
-
-      // Go to Visa payment if selected
-      if (paymentMethod === 'visa') {
-        setTimeout(() => {
-          window.location.href = 'https://paymob.xyz/vvc3kcaB/';
-        }, 1500);
-      }
-
-      form.reset();
+  
+      const formData = {
+        name,
+        phone,
+        age,
+        paymentMethod
+      };
+  
+      fetch("https://formspree.io/f/xwpolgzp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => {
+        if (response.ok) {
+          successMessage.style.display = 'block';
+          errorMessage.style.display = 'none';
+          form.reset();
+  
+          if (paymentMethod === 'visa') {
+            setTimeout(() => {
+              window.location.href = 'https://paymob.xyz/vvc3kcaB/';
+            }, 1500);
+          }
+        } else {
+          throw new Error("Form submission failed.");
+        }
+      })
+      .catch(() => {
+        successMessage.style.display = 'none';
+        errorMessage.style.display = 'block';
+      });
     });
-
-    // Translation logic
+  
+    // ترجمة اللغة
     let currentLang = 'en';
-
+  
     const translations = {
       ar: {
         'form-title': 'نموذج الاشتراك في أكاديمية أتاك لكرة القدم',
@@ -162,7 +186,6 @@
         'label-name': 'الاسم الكامل:',
         'label-phone': 'رقم الهاتف:',
         'label-age': 'العمر:',
-        
         'label-payment': 'طريقة الدفع:',
         'submit-btn': 'إرسال',
         'lang-toggle': 'English',
@@ -176,7 +199,6 @@
         'label-name': 'Full Name:',
         'label-phone': 'Phone Number:',
         'label-age': 'Age:',
-       
         'label-payment': 'Payment Method:',
         'submit-btn': 'Submit',
         'lang-toggle': 'العربية',
@@ -184,21 +206,21 @@
         'error-message': 'Error occurred. Please try again.'
       }
     };
-
+  
     function toggleLanguage() {
       currentLang = currentLang === 'en' ? 'ar' : 'en';
-
       document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-
+  
       for (let key in translations[currentLang]) {
         const el = document.getElementById(key);
         if (el) el.textContent = translations[currentLang][key];
       }
-
+  
       const toggleBtn = document.querySelector('.lang-toggle');
       toggleBtn.textContent = translations[currentLang === 'en' ? 'ar' : 'en']['lang-toggle'];
     }
   </script>
+  
 
 </body>
-</html>
+</html> -->
