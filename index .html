@@ -12,11 +12,12 @@
     <script src="https://kit.fontawesome.com/843a6e712c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+ 
       .reveal {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    transition-delay: 1s;
+    transition-delay: 0.8s;
   will-change: opacity, transform;
 }
 
@@ -293,7 +294,7 @@ nav.scrolled {
 <body  style="background-color:whitesmoke;">
     <!-- Intro Page -->
     <div class="intro-screen" id="intro">
-        <img alt="Attack Academy Logo" class="intro-logo" height="48" src="./attack (1).png" width="48">
+        <img alt="Attack Academy Logo" class="intro-logo " height="48" src="./attack (1).png" width="48">
     </div>
     
     <!-- News Ticker -->
@@ -307,7 +308,7 @@ nav.scrolled {
         <div class="flex items-center justify-between p-4 transition-all duration-300 ease-in-out">
             <div class="flex items-center">
                 
-                <img alt="Attack Academy Logo" class="h-20 w-20 transition-transform duration-300 hover:scale-110" height="80" src="./attack (1).png" style="align-items: center;" width="80">
+                <img alt="Attack Academy Logo" class="h-20 w-20 transition-transform duration-300 hover:scale-110 reveal" height="80" src="./attack (1).png" style="align-items: center;" width="80">
                 <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white ml-4">Attack Academy</h1>
 
             </div>
@@ -400,7 +401,7 @@ nav.scrolled {
 
     <section class="py-12 bg-white fade-in" id="about">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-4 gradient-text">معلومات عنا</h2>
+            <h2 class="text-3xl font-bold mb-4 gradient-text reveal">معلومات عنا</h2>
             <p class="text-black leading-relaxed">
                 تعمل أكاديمية أتاك لكرة القدم على توفير الأساسيات الإيجابية للاعبين بتقنيات عالية الجودة في بيئة مناسبة لذلك. جميع فترات التدريب مصممة خصيصاً للعمل على شخصية اللاعبين وتطوير مهاراتهم الشخصية والبدنية.
                 وتعمل الأكاديمية من خلال وحدات تدريبية في الجوانب البدنية والفنية والنفسية والتكتيكية
@@ -469,7 +470,7 @@ nav.scrolled {
         </div>
     </section>
     <section class="py-12 bg-white reveal" id="programs">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">برامجنا</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
